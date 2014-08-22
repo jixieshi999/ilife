@@ -1,0 +1,16 @@
+﻿<apigetversion>
+<pkg >
+<pkgName >com.android.liu.two</pkgName>
+<versionName >1.3</versionName> 
+<versionCode >4</versionCode>
+<name>哎聊天</name>
+<url>http://jixieshi999.github.io/ilife/apk/Two-release1.3.apk</url>
+</pkg>
+<pkg >
+<pkgName >android.liu.weidata</pkgName>
+<versionName >1.4.1</versionName> 
+<versionCode >11</versionCode>
+<name>哎生活</name>
+<url>http://jixieshi999.github.io/ilife/apk/Weidata-release1.4.1.apk</url>
+</pkg>
+</apigetversion>
