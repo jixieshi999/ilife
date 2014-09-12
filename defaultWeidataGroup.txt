@@ -15,5 +15,5 @@
 {"tag_weidata_group":"一日一美女","tag_weidata_key":"http://www.jvcxp.cc/rss-htm-fid-74.html","tag_weidata_type":"rss","tag_weidata_show":"1"}
 
 
-_config_#splashurl#http://jixieshi999.github.io/ilife/images/weidata1.3.2tu.png
-_config_#splashLocalPath#jixieshi999.github.io.weidata1.3.2tu.png
+_config_#splashurl#http://cdn.duitang.com/uploads/item/201208/09/20120809145755_R4mGB.jpeg
+_config_#splashLocalPath#cdn.duitang.com.20120809145755_R4mGB.jpeg
