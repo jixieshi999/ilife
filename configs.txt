@@ -1,4 +1,5 @@
 
 
-_config_#splashurl#http://cdn.duitang.com/uploads/item/201208/09/20120809145755_R4mGB.jpeg
-_config_#splashLocalPath#cdn.duitang.com.20120809145755_R4mGB.jpeg
+
+_config_#splashurl#http://d02.res.meilishuo.net/pic/_o/1f/e6/421262820f4b5325a9e26ec05eaa_990_826.jpeg
+_config_#splashLocalPath#d02.res.meilishuo.net.421262820f4b5325a9e26ec05eaa_990_826.jpeg
