@@ -1,5 +1,5 @@
 
 
 
-_config_#splashurl#http://d02.res.meilishuo.net/pic/_o/1f/e6/421262820f4b5325a9e26ec05eaa_990_826.jpeg
-_config_#splashLocalPath#d02.res.meilishuo.net.421262820f4b5325a9e26ec05eaa_990_826.jpeg
+_config_#splashurl#http://sh.xinkb.org/home/attachment/201011/4/816186_1288864802bObi.jpg
+_config_#splashLocalPath#sh.xinkb.org.816186_1288864802bObi.jpg
