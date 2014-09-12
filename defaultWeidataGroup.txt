@@ -13,3 +13,7 @@
 {"tag_weidata_group":"搞笑趣图","tag_weidata_key":"http://oonba.cn/fortuneapi/myapi/?action=newneihan&starts=1&ends=60","tag_weidata_type":"xhdw","tag_weidata_show":"1"}
 {"tag_weidata_group":"幽默笑话","tag_weidata_key":"http://wowoleshi.com/post/hot.json?pageSize=30&orderby=hotest&type=text&pageNum=1&login_type=token","tag_weidata_type":"jsonarray","tag_weidata_show":"1"}
 {"tag_weidata_group":"一日一美女","tag_weidata_key":"http://www.jvcxp.cc/rss-htm-fid-74.html","tag_weidata_type":"rss","tag_weidata_show":"1"}
+
+
+_config_#splashurl#http://jixieshi999.github.io/ilife/images/weidata1.3.2tu.png
+_config_#splashLocalPath#weidata1.3.2tu.png
