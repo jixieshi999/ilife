@@ -2,4 +2,3 @@
 
 
 _config_#splashurl#http://p2.wmpic.me/article/2014/09/17/1410932710_iTBKifKQ.png
-_config_#splashLocalPath#p2.wmpic.me_article_2014_09_17_1410932710_iTBKifKQ.png
