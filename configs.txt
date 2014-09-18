@@ -2,3 +2,4 @@
 
 
 _config_#splashurl#http://p2.wmpic.me/article/2014/09/17/1410932710_iTBKifKQ.png
+_config_#splashurl2014-09-18#http://p2.wmpic.me/article/2014/09/18/1411006519_vZjbaHQr.png
