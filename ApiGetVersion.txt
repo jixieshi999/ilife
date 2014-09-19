@@ -9,7 +9,7 @@
 <pkg >
 <pkgName >android.liu.weidata</pkgName>
 <versionName >1.4.6</versionName> 
-<versionCode >14</versionCode>
+<versionCode >15</versionCode>
 <name>哎生活</name>
 <updatecontent>1.优化UI--2.解决一些bug</updatecontent>
 <url>http://jixieshi999.github.io/ilife/apk/Weidata-release.apk</url>
