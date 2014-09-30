@@ -34,9 +34,9 @@
          
     </LinearLayout>
 	<com.juahya.guis.JTextView  android:layout_width="wrap_content" android:gravity="right" android:layout_gravity="center"
-        android:layout_height="40"  
+        android:layout_height="50"  
         juahya:attrKey="action_link"   juahya:attrType="test.xml"
-        juahya:attrDescription="123311" 
+        juahya:attrDescription="123311" android:text="保存" android:background="#e2eff2"
         android:id="123311" 
         />
     
