@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"  android:background="#ffffff"
+    android:layout_height="fill_parent" android:orientation="vertical">
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    <com.juahya.guis.JTextView  android:layout_width="200" android:gravity="center" android:layout_gravity="center"
+        android:layout_height="wrap_content" android:background="#e2eff2"
+        juahya:attrKey="action_back" 
+         android:paddingTop="10" android:paddingBottom="10" 
+        juahya:attrDescription="123321" android:text="返回"
+        android:id="123321"
+        />
+    <TextView  android:layout_weight="1"
+        android:layout_width="wrap_content" android:background="#e2e2c2"
+        android:layout_height="fill_parent" android:gravity="center" 
+        android:text="购买其他产品" />
+    <com.juahya.guis.JTextView  android:layout_width="200" android:gravity="center" android:layout_gravity="center"
+        android:layout_height="wrap_content" android:background="#e2eff2"
+        juahya:attrKey="action_save_upload"  android:text="保存"
+         android:paddingTop="10" android:paddingBottom="10" 
+        juahya:attrDescription="12331" 
+        android:id="12331" 
+        />
+    </LinearLayout>
+
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal">
+         
+        <LinearLayout  android:background="#e2e222"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="50" android:orientation="horizontal">
+             
+        </LinearLayout>
+        
+        <LinearLayout  android:background="#222222"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="50" android:orientation="horizontal">
+             
+        </LinearLayout>
+    </LinearLayout>
+	
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal">
+         
+        <LinearLayout  android:background="#666666"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="50" android:orientation="horizontal">
+             
+        </LinearLayout>
+        
+        <LinearLayout  android:background="#256772"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="50" android:orientation="horizontal">
+             
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal">
+         
+        <LinearLayout  android:background="#35e255"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="50" android:orientation="horizontal">
+             
+        </LinearLayout>
+        
+        <LinearLayout  android:background="#2e22ff"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="50" android:orientation="horizontal">
+             
+        </LinearLayout>
+    </LinearLayout>
+    
+</LinearLayout>
