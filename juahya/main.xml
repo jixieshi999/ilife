@@ -37,18 +37,18 @@
          
         <LinearLayout  android:background="#e2e222"  android:layout_marginRight="1"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:layout_height="120" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
              
         </LinearLayout>
         
         <LinearLayout  android:background="#222222" android:layout_marginRight="1"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:layout_height="120" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
              
         </LinearLayout>
         <LinearLayout  android:background="#222ff2"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:layout_height="120" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
              
         </LinearLayout>
     </LinearLayout>
@@ -59,18 +59,18 @@
          
         <LinearLayout  android:background="#666666" android:layout_marginRight="1"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:layout_height="120" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
              
         </LinearLayout>
         
         <LinearLayout  android:background="#e22ff2" android:layout_marginRight="1"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:layout_height="120" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
              
         </LinearLayout>
         <LinearLayout  android:background="#256772"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:layout_height="120" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
              
         </LinearLayout>
     </LinearLayout>
@@ -81,18 +81,18 @@
          
         <LinearLayout  android:background="#22eff2" android:layout_marginRight="1"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:layout_height="120" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
              
         </LinearLayout>
         <LinearLayout  android:background="#35e255" android:layout_marginRight="1"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:layout_height="120" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
              
         </LinearLayout>
         
         <LinearLayout  android:background="#2e22ff"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:layout_height="120" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
              
         </LinearLayout>
     </LinearLayout>
