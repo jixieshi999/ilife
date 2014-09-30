@@ -90,7 +90,7 @@
              
         </LinearLayout>
         
-        <LinearLayout  android:background="#2e22ff"
+        <LinearLayout  android:background="#2e2d5f"
             android:layout_width="wrap_content"  android:layout_weight="1"
             android:layout_height="220" android:orientation="horizontal">
              
