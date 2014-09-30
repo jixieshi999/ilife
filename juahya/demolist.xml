@@ -52,8 +52,8 @@
         android:layout_height="1"  />
     <com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
         android:layout_height="80"  
-        juahya:attrKey="action_link"   juahya:attrType="test.xml"
-        juahya:attrDescription="1233112" android:text="链接2跳转测试" android:background="#effff2"
+        juahya:attrKey="action_link"   juahya:attrType="buynewpro.xml"
+        juahya:attrDescription="1233112" android:text="购买其他产品" android:background="#effff2"
         android:id="1233112" 
         />
     
