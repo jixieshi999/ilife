@@ -39,17 +39,35 @@
             android:layout_width="wrap_content"  android:layout_weight="1"
             android:layout_height="220" android:orientation="horizontal">
              
+    		<com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
+	        	android:layout_height="fill_parent"  
+		        juahya:attrKey="action_link"   juahya:attrType=""
+		        juahya:attrDescription="123311" android:text="注册" 
+		        android:id="123311" 
+		        />
         </LinearLayout>
         
         <LinearLayout  android:background="#222222" android:layout_marginRight="3"
             android:layout_width="wrap_content"  android:layout_weight="1"
             android:layout_height="220" android:orientation="horizontal">
              
+    		<com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
+	        	android:layout_height="fill_parent"  
+		        juahya:attrKey="action_link"   juahya:attrType=""
+		        juahya:attrDescription="123321" android:text="注会" 
+		        android:id="123321" 
+		        />
         </LinearLayout>
         <LinearLayout  android:background="#222ff2"
             android:layout_width="wrap_content"  android:layout_weight="1"
             android:layout_height="220" android:orientation="horizontal">
              
+    		<com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
+	        	android:layout_height="fill_parent"  
+		        juahya:attrKey="action_link"   juahya:attrType=""
+		        juahya:attrDescription="123211" android:text="册会" 
+		        android:id="123211" 
+		        />
         </LinearLayout>
     </LinearLayout>
 	
