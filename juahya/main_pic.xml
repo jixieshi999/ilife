@@ -37,7 +37,7 @@
          
         <LinearLayout   android:layout_marginRight="3"
             android:layout_width="wrap_content"  android:layout_weight="1"
-            android:background="@url/https://github.com/jixieshi999/ilife/blob/gh-pages/images/1.png"
+            android:background="@url/http://jixieshi999.github.io/ilife/images/1.png"
             android:layout_height="220" android:orientation="horizontal">
              
     		<com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
