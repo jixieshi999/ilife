@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"  android:background="#ffffff"
+    android:layout_height="fill_parent" android:orientation="vertical">
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    <com.juahya.guis.JTextView  android:layout_width="200" android:gravity="center" android:layout_gravity="center"
+        android:layout_height="wrap_content" android:background="#e2eff2"
+        juahya:attrKey="action_back" 
+         android:paddingTop="10" android:paddingBottom="10" 
+        juahya:attrDescription="123321" android:text="返回"
+        android:id="123321"
+        />
+    <TextView  android:layout_weight="1"
+        android:layout_width="wrap_content" android:background="#e2e2c2"
+        android:layout_height="fill_parent" android:gravity="center" 
+        android:text="九宫格主页" />
+    <com.juahya.guis.JTextView  android:layout_width="200" android:gravity="center" android:layout_gravity="center"
+        android:layout_height="wrap_content" android:background="#e2eff2"
+        juahya:attrKey="action_save_upload"  android:text="保存"
+         android:paddingTop="10" android:paddingBottom="10" 
+        juahya:attrDescription="12331" 
+        android:id="12331" 
+        />
+    </LinearLayout>
+
+    <ImageView 
+        android:layout_width="fill_parent"  
+        android:layout_height="200"  
+        android:background="@url/http://www.beingmate.com/images/home_tips_img_20140723.jpg"
+        />
+    <LinearLayout  android:layout_marginTop="5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal">
+         
+        <LinearLayout  android:background="#02b5fe"  android:layout_marginRight="3"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="220" android:orientation="horizontal">
+             
+    		<com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
+	        	android:layout_height="fill_parent"  
+		        juahya:attrKey="action_link"   juahya:attrType=""
+		        juahya:attrDescription="123311" android:text="注册" 
+		        android:id="123311" 
+		        />
+        </LinearLayout>
+        
+        <LinearLayout  android:background="#222222" android:layout_marginRight="3"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="220" android:orientation="horizontal">
+             
+    		<com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
+	        	android:layout_height="fill_parent"  
+		        juahya:attrKey="action_link"   juahya:attrType=""
+		        juahya:attrDescription="1233211" android:text="注会" 
+		        android:id="1233211" 
+		        />
+        </LinearLayout>
+        <LinearLayout  android:background="#222ff2"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="220" android:orientation="horizontal">
+             
+    		<com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
+	        	android:layout_height="fill_parent"  
+		        juahya:attrKey="action_link"   juahya:attrType=""
+		        juahya:attrDescription="3332221" android:text="册会" 
+		        android:id="3332221" 
+		        />
+        </LinearLayout>
+    </LinearLayout>
+	
+    <LinearLayout  android:layout_marginTop="3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal">
+         
+        <com.juahya.guis.JLinearlayout  android:background="#61ca23" android:layout_marginRight="3"
+            android:layout_width="wrap_content"  android:layout_weight="1" 
+		        juahya:attrKey="action_link"   juahya:attrType=""
+		        juahya:attrDescription="123344" 
+		        android:id="123344" 
+            android:layout_height="220" android:orientation="horizontal">
+             
+        </com.juahya.guis.JLinearlayout>
+        
+        <LinearLayout  android:background="#f9ca43" android:layout_marginRight="3"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="220" android:orientation="horizontal">
+             
+        </LinearLayout>
+        <LinearLayout  android:background="#256772"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="220" android:orientation="horizontal">
+             
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"  android:layout_marginTop="3"
+        android:layout_height="wrap_content" android:orientation="horizontal">
+         
+        <LinearLayout  android:background="#22eff2" android:layout_marginRight="3"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="220" android:orientation="horizontal">
+             
+        </LinearLayout>
+        <LinearLayout  android:background="#35e255" android:layout_marginRight="3"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="220" android:orientation="horizontal">
+             
+        </LinearLayout>
+        
+        <LinearLayout  android:background="#2e2d5f"
+            android:layout_width="wrap_content"  android:layout_weight="1"
+            android:layout_height="220" android:orientation="horizontal">
+             
+        </LinearLayout>
+    </LinearLayout>
+    
+</LinearLayout>

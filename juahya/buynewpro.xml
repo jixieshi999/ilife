@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    <com.juahya.guis.JTextView  android:layout_width="200" android:gravity="center" android:layout_gravity="center"
+        android:layout_height="wrap_content" android:background="#e2eff2"
+        juahya:attrKey="action_back" 
+         android:paddingTop="10" android:paddingBottom="10" 
+        juahya:attrDescription="123321" android:text="返回"
+        android:id="123321"
+        />
+    <TextView  android:layout_weight="1"
+        android:layout_width="wrap_content" android:background="#e2e2c2"
+        android:layout_height="fill_parent" android:gravity="center" 
+        android:text="购买其他产品" />
+    <com.juahya.guis.JTextView  android:layout_width="200" android:gravity="center" android:layout_gravity="center"
+        android:layout_height="wrap_content" android:background="#e2eff2"
+        juahya:attrKey="action_save_upload"  android:text="保存"
+         android:paddingTop="10" android:paddingBottom="10" 
+        juahya:attrDescription="12331" 
+        android:id="12331" 
+        />
+    </LinearLayout>
+
+	
+    <TextView  
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"  
+        android:text="联系电话" />
+    <com.juahya.guis.JEditText  android:layout_width="fill_parent" android:gravity="left" android:layout_gravity="center"
+        android:layout_height="wrap_content"  
+        juahya:attrKey="name" juahya:attrDescription="请输入联系电话"  
+        />
+    
+    <TextView  
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"  
+        android:text="姓名" />
+    <com.juahya.guis.JEditText  android:layout_width="fill_parent" android:gravity="left" android:layout_gravity="center"
+        android:layout_height="wrap_content" 
+        juahya:attrKey="address" juahya:attrDescription="请输入姓名" 
+        />
+    
+    <TextView  
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"  
+        android:text="产品名称" />
+    <com.juahya.guis.JEditText  android:layout_width="fill_parent" android:gravity="left" android:layout_gravity="center"
+        android:layout_height="wrap_content" 
+        juahya:attrKey="work" juahya:attrDescription="请输入产品名称" 
+        />
+    <TextView  
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"  
+        android:text="数量" />
+    <com.juahya.guis.JEditText  android:layout_width="fill_parent" android:gravity="left" android:layout_gravity="center"
+        android:layout_height="wrap_content" 
+        juahya:attrKey="num" juahya:attrDescription="请输入数量" 
+        />
+    
+</LinearLayout>
