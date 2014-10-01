@@ -65,8 +65,8 @@
     		<com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
 	        	android:layout_height="fill_parent"  
 		        juahya:attrKey="action_link"   juahya:attrType=""
-		        juahya:attrDescription="123211" android:text="册会" 
-		        android:id="123211" 
+		        juahya:attrDescription="3332221" android:text="册会" 
+		        android:id="3332221" 
 		        />
         </LinearLayout>
     </LinearLayout>
