@@ -70,7 +70,7 @@
              
         </com.juahya.guis.JLinearlayout>
         
-        <LinearLayout  a
+        <LinearLayout  
             android:background="@url/http://jixieshi999.github.io/ilife/images/5.png" android:layout_marginRight="3"
             android:layout_width="wrap_content"  android:layout_weight="1"
             android:layout_height="220" android:orientation="horizontal">
