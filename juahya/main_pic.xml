@@ -58,9 +58,15 @@
 	
     <LinearLayout  android:layout_marginTop="3"
         android:layout_width="fill_parent"
-            android:background="@url/http://jixieshi999.github.io/ilife/images/4.png"
         android:layout_height="wrap_content" android:orientation="horizontal">
          
+        <com.juahya.guis.JLinearlayout  
+            android:background="@url/http://jixieshi999.github.io/ilife/images/4.png" android:layout_marginRight="3"
+            android:layout_width="wrap_content"  android:layout_weight="1" 
+		        juahya:attrKey="action_link"   juahya:attrType=""
+		        juahya:attrDescription="123344" 
+		        android:id="123344" 
+            android:layout_height="220" android:orientation="horizontal">
              
         </com.juahya.guis.JLinearlayout>
         
