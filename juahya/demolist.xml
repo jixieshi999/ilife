@@ -35,7 +35,7 @@
     <com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
         android:layout_height="80"  
         juahya:attrKey="action_link"   juahya:attrType="test.xml"
-        juahya:attrDescription="123311" android:text="注册会员测试" android:background="#e33ff2"
+        juahya:attrDescription="123311" android:text="注册会员测试" android:background="#f9ca43"
         android:id="123311" 
         />
     <TextView  
@@ -44,7 +44,7 @@
     <com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
         android:layout_height="80"  
         juahya:attrKey="action_link"   juahya:attrType="main.xml"
-        juahya:attrDescription="1233111" android:text="九宫格测试" android:background="#e33ff2"
+        juahya:attrDescription="1233111" android:text="九宫格测试" android:background="#f9ca43"
         android:id="1233111" 
         />
     <TextView  
@@ -52,8 +52,17 @@
         android:layout_height="1"  />
     <com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
         android:layout_height="80"  
+        juahya:attrKey="action_link"   juahya:attrType="main_pic.xml"
+        juahya:attrDescription="1233115" android:text="九宫格图片" android:background="#f9ca43"
+        android:id="1233115" 
+        />
+    <TextView  
+        android:layout_width="fill_parent" android:background="#000000"
+        android:layout_height="1"  />
+    <com.juahya.guis.JTextView  android:layout_width="fill_parent" android:gravity="center" android:layout_gravity="center"
+        android:layout_height="80"  
         juahya:attrKey="action_link"   juahya:attrType="buynewpro.xml"
-        juahya:attrDescription="1233112" android:text="购买其他产品" android:background="#e33ff2"
+        juahya:attrDescription="1233112" android:text="购买其他产品" android:background="#f9ca43"
         android:id="1233112" 
         />
     
