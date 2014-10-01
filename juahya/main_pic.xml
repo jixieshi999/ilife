@@ -66,7 +66,7 @@
     </LinearLayout>
 	
     <LinearLayout  android:layout_marginTop="3"
-        android:layout_width="fill_parent"
+        android:layout_width="fill_parent" android:gravity="center"
         android:layout_height="wrap_content" android:orientation="horizontal">
          
         <com.juahya.guis.JLinearlayout  
@@ -96,7 +96,7 @@
         </com.juahya.guis.JLinearlayout>
     </LinearLayout>
     
-    <LinearLayout 
+    <LinearLayout  android:gravity="center"
         android:layout_width="fill_parent"  android:layout_marginTop="3"
         android:layout_height="wrap_content" android:orientation="horizontal">
          
@@ -110,20 +110,20 @@
         </com.juahya.guis.JLinearlayout>
         <com.juahya.guis.JLinearlayout  
             android:background="#35e255" android:layout_marginRight="3"
-            android:layout_width="wrap_content"   
+            android:layout_width="220"   
 		        juahya:attrKey="action_link"   juahya:attrType=""
 		        juahya:attrDescription="123351" 
 		        android:id="123351" 
-            android:layout_height="wrap_content" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
         </com.juahya.guis.JLinearlayout>
         
         <com.juahya.guis.JLinearlayout  
             android:background="#02b5fe" android:layout_marginRight="3"
-            android:layout_width="wrap_content"   
+            android:layout_width="220"   
 		        juahya:attrKey="action_link"   juahya:attrType=""
 		        juahya:attrDescription="123352" 
 		        android:id="123352" 
-            android:layout_height="wrap_content" android:orientation="horizontal">
+            android:layout_height="220" android:orientation="horizontal">
         </com.juahya.guis.JLinearlayout>
     </LinearLayout>
     
