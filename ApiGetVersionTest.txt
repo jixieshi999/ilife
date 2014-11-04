@@ -1,21 +1,4 @@
-﻿<apigetversion>
-<pkg >
-<pkgName >com.android.liu.two</pkgName>
-<versionName >1.3</versionName> 
-<versionCode >4</versionCode>
-<name>哎聊天</name>
-<url>http://jixieshi999.github.io/ilife/apk/Two-release1.3.apk</url>
-</pkg>
-<pkg >
-<pkgName >android.liu.weidata</pkgName>
-<versionName >1.4.2</versionName> 
-<versionCode >12</versionCode>
-<name>哎生活</name>
-<updatecontent>1.UI更新--2.新增分享功能--3.新增分享功能--4.新增分享功能--5.新增分享功能--6.新增分享功能--7.新增分享功能--8.新增分享功能
-		--9.新增分享功能
-		--10.新增分享功能
-		--11.新增分享功能
-		--12.新增分享功能</updatecontent>
-<url>http://jixieshi999.github.io/ilife/apk/Weidata-release1.4.1.apk</url>
-</pkg>
-</apigetversion>
+
+	 _config_#host#自动选择服务器___10.100.111.111___8088
+	 _config_#host#自动选择服务___10.100.111.112___8082
+	 _config_#login#1
