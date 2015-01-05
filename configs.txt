@@ -2,6 +2,10 @@
 
 
 _config_#splashurl#http://p2.wmpic.me/article/2014/12/31/1419990814_akEYDmQu.jpg
+_config_#splashurl2015-01-10#http://p1.wmpic.me/article/2014/12/31/1419990987_PDcLyKNC.jpg
+_config_#splashurl2015-01-09#http://p1.wmpic.me/article/2014/12/31/1419990987_PDcLyKNC.jpg
+_config_#splashurl2015-01-08#http://p1.wmpic.me/article/2014/12/31/1419990987_PDcLyKNC.jpg
+
 _config_#splashurl2015-01-05#http://p2.wmpic.me/article/2014/12/31/1419990814_akEYDmQu.jpg
-_config_#splashurl2015-01-04#http://p2.wmpic.me/article/2014/09/17/1410932710_iTBKifKQ.png
-_config_#splashurl2014-09-18#http://p2.wmpic.me/article/2014/09/18/1411006519_vZjbaHQr.png
+//_config_#splashurl2015-01-04#http://p2.wmpic.me/article/2014/09/17/1410932710_iTBKifKQ.png
+//_config_#splashurl2014-09-18#http://p2.wmpic.me/article/2014/09/18/1411006519_vZjbaHQr.png
