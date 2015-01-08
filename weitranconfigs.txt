@@ -1,1 +1,5 @@
-sss
+#开头为注释，按行读取配置
+_config_#spidersleeptime#59
+_config_#sendmode#crazy
+_config_#Sendersleeptime#4
+
