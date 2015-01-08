@@ -2,4 +2,6 @@
 _config_#spidersleeptime#59
 _config_#sendmode#crazy
 _config_#Sendersleeptime#4
+_config_#switchsender#false
+
 
