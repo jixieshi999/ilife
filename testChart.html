@@ -32,22 +32,13 @@
 
   <script type="text/javascript">
 
+	
 	//Bmob.initialize("Application ID", "REST API Key");
     Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
 	
-	/*
-	var TestObject = Bmob.Object.extend("TestObject");
-    var testObject = new TestObject();
-      testObject.save({foo: "bar"}, {
-      success: function(object) {
-        $(".success").show();
-      },
-      error: function(model, error) {
-        $(".error").show();
-      }
-    });
-	*/
-	
+	//alert("imei");
+        var aaa=30;
+				//alert("asd");
         require.config({
             paths: {
                 echarts: 'http://echarts.baidu.com/build/dist'
@@ -66,51 +57,7 @@
                 }
             ]
         });
-        
-        var option = {
-            tooltip : {
-                trigger: 'axis'
-            },
-            legend: {
-                data:['蒸发量','降水量']
-            },
-            toolbox: {
-                show : true,
-                feature : {
-                    mark : {show: true},
-                    dataView : {show: true, readOnly: false},
-                    magicType : {show: true, type: ['line', 'bar']},
-                    restore : {show: true},
-                    saveAsImage : {show: true}
-                }
-            },
-            calculable : true,
-            xAxis : [
-                {
-                    type : 'category',
-                    data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
-                }
-            ],
-            yAxis : [
-                {
-                    type : 'value',
-                    splitArea : {show : true}
-                }
-            ],
-            series : [
-                {
-                    name:'蒸发量',
-                    type:'bar',
-                    data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
-                },
-                {
-                    name:'降水量',
-                    type:'bar',
-                    data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
-                }
-            ]
-        };
-        
+        var myChart ;
         require(
             [
                 'echarts',
@@ -118,70 +65,133 @@
                 'echarts/chart/bar'
             ],
             function (ec) {
-                var myChart = ec.init(document.getElementById('main'));
-                myChart.setOption(option);
+				
+				var option = {
+					tooltip : {
+						trigger: 'axis'
+					},
+					legend: {
+						data:['蒸发量','降水量']
+					},
+					toolbox: {
+						show : true,
+						feature : {
+							mark : {show: true},
+							dataView : {show: true, readOnly: false},
+							magicType : {show: true, type: ['line', 'bar']},
+							restore : {show: true},
+							saveAsImage : {show: true}
+						}
+					},
+					calculable : true,
+					xAxis : [
+						{
+							type : 'category',
+							data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+						}
+					],
+					yAxis : [
+						{
+							type : 'value',
+							splitArea : {show : true}
+						}
+					],
+					series : [
+						{
+							name:'蒸发量',
+							type:'bar',
+							data:[2.0, 4.9, 7.0, aaa, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+						},
+						{
+							name:'降水量',
+							type:'bar',
+							data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+						}
+					]
+				};
+                myChart = ec.init(document.getElementById('main'));
+				
+				myChart.showLoading({
+					text: "图表数据正在努力加载..."
+				});
+	
+				//获取一行数据
+				var GameScore = Bmob.Object.extend("LogBean");
+				var query = new Bmob.Query(GameScore);
+				query.equalTo("type","statusdb");
+				query.equalTo("model","db");
+				query.find( {
+				  success: function(object) {
+					//alert(object[0].get("record"));
+					var ttxt=object[0].get("record");
+						
+					var series_1 = new Array();
+					var series_21 = new Array();
+					var series_22 = new Array();
+					var series_23 = new Array();
+					var xAxis_1 = new Array();
+					
+					for (i=0;i<object.length;i++)
+					{
+						//alert(object[i].get("record").split("|")[0].split("*"));
+						var obj=object[i].get("record");
+						series_1[i] = obj.split("*")[0];
+						var obj2=obj.split("*")[1].split("|");
+						series_21[i] = obj2[0];
+						series_22[i] = obj2[1];
+						series_23[i] = obj2[2];
+						xAxis_1[i]=obj.split("*")[4];
+						//x.get("record").split("|")[0].split("*");
+					}
+					//alert(mycars);
+					//ttxt.split("|");
+					//alert(ttxt.split("|")[0].split("*"));
+					// The object was retrieved successfully.
+					aaa=100;
+					option.series=[
+						{
+							name:'总量',
+							type:'bar',
+							data:series_1
+						},
+						{
+							name:'一日一美女',
+							type:'bar',
+							data:series_21
+						},
+						{
+							name:'幽默笑话',
+							type:'bar',
+							data:series_22
+						},
+						{
+							name:'搞笑趣图',
+							type:'bar',
+							data:series_23
+						}
+					];
+						option.xAxis= [
+						{
+							type : 'category',
+							data : xAxis_1
+						}
+					]
+					//myChart.setOption(option);
+					//myChart.refresh();
+					//myChart.showLoading();
+					//setTimeout(refresh, 1000);
+					//myChart.setOption(option, true)
+					//myChart.refresh();
+					//alert(object.get("imei"));
+					myChart.hideLoading();
+					myChart.setOption(option);
+				  },
+				  error: function(object, error) {
+					alert("query object fail");
+				  }
+				});
             }
-        )
-
-	
-	//获取一行数据
-	var GameScore = Bmob.Object.extend("LogBean");
-    var query = new Bmob.Query(GameScore);
-    query.get("02ea12e01f", {
-      success: function(object) {
-        // The object was retrieved successfully.
-        alert(object.get("imei"));
-      },
-      error: function(object, error) {
-        alert("query object fail");
-      }
-    });
-	/*
-	//修改一行数据
-	var GameScore = Bmob.Object.extend("GameScore");
-    var query = new Bmob.Query(GameScore);
-    query.get("4edc3f6ee9", {
-      success: function(object) {
-        // The object was retrieved successfully.
-        object.set("score", 1338);
-        object.save(null, {
-          success: function(objectUpdate) {
-            alert("create object success, object score:"+objectUpdate.get("score"));
-          },
-          error: function(model, error) {
-            alert("create object fail");
-          }
-        });
-      },
-      error: function(object, error) {
-        alert("query object fail");
-      }
-    });
-	*/
-
-	/*	
-	//删除一行数据
-	var GameScore = Bmob.Object.extend("GameScore");
-    var query = new Bmob.Query(GameScore);
-    query.get("4edc3f6ee9", {
-      success: function(object) {
-        // The object was retrieved successfully.
-        object.destroy({
-          success: function(deleteObject) {
-          alert("delete success");
-          },
-          error: function(GameScoretest, error) {
-          alert("delete fail");
-          }
-        });
-      },
-      error: function(object, error) {
-        alert("query object fail");
-      }
-    });
-	*/
-
-	
+        );	
   </script>
   <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
