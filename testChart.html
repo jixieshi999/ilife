@@ -1,20 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
   <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-	<script class="jquery library" src="/js/sandbox/jquery/jquery-1.8.2.min.js" type="text/javascript"></script>
+  <script class="jquery library" src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
   <script src="http://static.bmob.cn/bmob-min.js"></script> 
-    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
-	<title>哎系列后台报表统计</title>
+  <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+  <title>哎系列后台报表统计</title>
 
-	<script id="jquery_182" type="text/javascript" class="library" src="/js/sandbox/jquery/jquery-1.8.2.min.js"></script>
+  <script id="jquery_182" type="text/javascript" class="library" src="/js/sandbox/jquery/jquery-1.8.2.min.js"></script>
 
   </head>
 <body>
     <div class='content'>
     <header>
+      <h1 class="title">
 	<select  class="selector1">
 		<option value ="7">最近7天</option>
 		<option value ="30">最近一个月</option>
@@ -22,6 +23,7 @@
 		<option value="180">最近半年个月</option>
 		<option value="365">最近一年个月</option>
 	</select>
+	</h1>
       <h1 class="title">数据爬取</h1>
     </header>
     <div id="main" style="height:500px;"></div>
@@ -31,6 +33,15 @@
     <div id="sender" style="height:500px;"></div>
 			
   <script type="text/javascript">
+  $(".selector1").change(function(){
+
+     // 先清空第二个
+	var selecteditem=$(".selector1").val();
+	myFunction(0,"main",selecteditem);
+	myFunction(2,"sender",selecteditem);
+	//alert($(".selector1").val());
+
+});
 /*	$(".selector1").change(function(){
 
      // 先清空第二个
