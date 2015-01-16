@@ -128,17 +128,18 @@ function myFunction(inputtype,prenxt,currentDate)
 {
     Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
 	//alert("imei");
-    var aaa=30;
+    	var aaa=30;
 	//获取一行数据
 	var GameScore = Bmob.Object.extend("BWeiData");
 	var query = new Bmob.Query(GameScore);
 	query.equalTo("type",inputtype);
-	query.descending("createdAt");
 	if(prenxt==1){//pre
+	   query.ascending("createdAt");
 	    if(0!=currentDate){
     	   query.greaterThanOrEqualTo("time",currentDate);
     	}
 	}else{//nxt
+	   query.descending("createdAt");
 	    if(0!=currentDate){
 //alert("ct:"+currentDate+",pre:"+preDateGlobal+",nxt"+currentDateGlobal);
     	   query.lessThanOrEqualTo("time",currentDate);
@@ -149,24 +150,17 @@ function myFunction(inputtype,prenxt,currentDate)
 	  success: function(object) {
 		//alert(object[0].get("record"));
 		$('#content').empty();
-		for (i=0;i<object.length;i++)
-		{
-			//alert(object[i].get("content");
-			var obj=object[i].get("content");
-			var kk=0;
-			kk=object[i].get("time");
-            var de = new Date();
-            de.setTime(kk);
-            if(''!=object[i].get("field")){
-		    $('#content').append('<li>'+object[i].get("content")
-		    +'');
-		    $('#content').append("<br/> <a target='_blank'  href='"+object[i].get("field")+"'>"
-		    +" <img src='"+object[i].get("field")+"' width='100px' height='100px'>"
-		    +"</a>"
-		    +'</li>');
-            }else{
-		    $('#content').append('<li>'+object[i].get("content")+'</li>');
-            }
+	    	if(prenxt==1){//pre
+			for (i=object.length-1;i>=0;i--)
+	    		{
+	    		  addItem(object[i]);
+	    		}
+	    	}else{//nxt
+		        for (i=0;i<object.length;i++)
+	    		{
+	    		  addItem(object[i]);
+	    		}
+	    	}
 		}
 		currentDateGlobal =object[object.length-1].get("time");
 		preDateGlobal=object[0].get("time");
@@ -184,6 +178,26 @@ function myFunction(inputtype,prenxt,currentDate)
 	});
 }
 
+
+function addItem(obj){
+
+			//alert(obj.get("content");
+			//var obj=obj.get("content");
+			var kk=0;
+			kk=obj.get("time");
+            var de = new Date();
+            de.setTime(kk);
+            if(''!=obj.get("field")){
+		    $('#content').append('<li>'+obj.get("content")
+		    +'');
+		    $('#content').append("<br/> <a target='_blank'  href='"+obj.get("field")+"'>"
+		    +" <img src='"+obj.get("field")+"' width='100px' height='100px'>"
+		    +"</a>"
+		    +'</li>');
+            }else{
+		    $('#content').append('<li>'+obj.get("content")+'</li>');
+            }
+}
 function unActiveAll(){
 /**
 	$("#c_main_").removeClass('active'); 
