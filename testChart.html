@@ -139,6 +139,7 @@ function myFunction(inputtype,layout,days)
 				var query = new Bmob.Query(GameScore);
 				query.equalTo("type","statusdb");
 				query.equalTo("model","db");
+				query.descending("createdAt");
 				query.limit(days);
 				query.find( {
 				  success: function(object) {
