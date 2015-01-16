@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		
 <link href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">
-		<script class="jquery library" src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+		<script class="jquery library" src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
 <!-- 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 -->
@@ -136,14 +136,14 @@ function myFunction(inputtype,prenxt,currentDate)
 	if(prenxt==1){//pre
 	   query.ascending("createdAt");
 	    if(0!=currentDate){
-    	   query.greaterThanOrEqualTo("time",currentDate);
-    	}
+    		 query.greaterThanOrEqualTo("time",currentDate);
+    		}
 	}else{//nxt
 	   query.descending("createdAt");
 	    if(0!=currentDate){
 //alert("ct:"+currentDate+",pre:"+preDateGlobal+",nxt"+currentDateGlobal);
     	   query.lessThanOrEqualTo("time",currentDate);
-    	}
+    		}
 	}
 	query.limit(7);
 	query.find( {
@@ -160,7 +160,7 @@ function myFunction(inputtype,prenxt,currentDate)
 	    		{
 	    		  addItem(object[i]);
 	    		}
-	    	}
+	    	
 		}
 		currentDateGlobal =object[object.length-1].get("time");
 		preDateGlobal=object[0].get("time");
