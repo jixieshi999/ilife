@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+		
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		
 <link href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">
@@ -9,111 +10,81 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 -->
   <script src="http://static.bmob.cn/bmob-min.js"></script> 
+	<title>哎生活后台报表统计</title>
+	<!-- 
   <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+	<link id="bootstrap_331" rel="stylesheet" type="text/css" class="library" href="http://cdn.bootcss.com/bootstrap/2.2.1/css/bootstrap.min.css">
+	<link id="bootstrap_331" rel="stylesheet" type="text/css" class="library" href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	-->
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	
 		
-	
-	<title>哎生活后台报表统计</title>
-	
-	<link id="bootstrap_331" rel="stylesheet" type="text/css" class="library" href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<script id="bootstrap_331" type="text/javascript" class="library" src="http://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	
   </head>
 <body>
-	
 	<div class="container-fluid">
-	<div class="row-fluid">
+	<div class="row-fluid" >
 		<div class="span2">
 		</div>
-		<div class="span6">
-			<div class="navbar">
-				<div class="navbar-inner">
-					<div class="container-fluid">
-						<a class="btn btn-navbar" data-target=".navbar-responsive-collapse" data-toggle="collapse"></a> <a class="brand" href="#">哎生活</a>
-						<div class="nav-collapse collapse navbar-responsive-collapse">
-							<ul class="nav">
-								<li class="active"   id="c_main_"  >
-									<a  class="c_main" >主页</a>
-								</li>
-								<li  id="c_main_txt"  >
-									<a   >文字</a>
-								</li>
-								<li  id="c_main_pic"  >
-									<a >图片</a>
-								</li>
-								<li  id="c_main_mv"  >
-									<a >美女</a>
-								</li>
-								<li class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" href="#">下拉菜单</a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="#">下拉导航1</a>
-										</li>
-										<li>
-											<a href="#">下拉导航2</a>
-										</li>
-										<li>
-											<a href="#">其他</a>
-										</li>
-										<li class="divider">
-										</li>
-										<li class="nav-header">
-											标签
-										</li>
-										<li>
-											<a href="#">链接1</a>
-										</li>
-										<li>
-											<a href="#">链接2</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</div>
-						
-					</div>
-				</div>
-				
-			</div>
-			<p>
-				<embed height="0" id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" width="0" />
-			</p>
-			<p>
-				<embed height="0" id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" width="0" />
-			</p>
-			<p>
-				<embed height="0" id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" width="0" />
-			</p>
-			<p>
-				<embed height="0" id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" width="0" />
-			</p>
-		    </div>
-	        <ol contenteditable="true"  id="content" >
-        	   <li>新闻资讯</li>
-            </ol>
+		<div class="span" >
+			<ul class="nav nav-pills" >
+				<li class="active"  id="c_main_" >
+					<a href="#" >首页</a>
+				</li>
+				<li id="c_main_txt" >
+					<a href="#">文字</a>
+				</li>
+				<li   id="c_main_pic" >
+					<a href="#">图片</a>
+				</li>
+				<li   id="c_main_mv" >
+					<a href="#">美女</a>
+				</li>
+				<li class="dropdown pull-right">
+					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">操作</a>
+						</li>
+						<li>
+							<a href="#">设置栏目</a>
+						</li>
+						<li>
+							<a href="#">更多设置</a>
+						</li>
+						<li class="divider">
+						</li>
+						<li>
+							<a href="#">分割线</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ol  id="content" >
+				<li>
+					新闻资讯
+				</li>
+				<li>
+					体育竞技
+				</li>
+			</ol>
+			
 			<div class="pagination pagination-small">
 				<ul>
-					<li>
+					<li id="c_limit_pre" >
 						<a href="#">上一页</a>
 					</li>
-					<li>
-						<a href="#">1</a>
+					<li id="c_limit_1" >
+						<a >1</a>
 					</li>
-					<li>
-						<a href="#">2</a>
-					</li>
-					<li>
-						<a href="#">3</a>
-					</li>
-					<li>
-						<a href="#">4</a>
-					</li>
-					<li>
-						<a href="#">5</a>
-					</li>
-					<li>
-						<a href="#">下一页</a>
+					<li id="c_limit_next" >
+						<a >下一页</a>
 					</li>
 				</ul>
 			</div>
@@ -122,37 +93,97 @@
 		</div>
 	</div>
 </div>
-	
+
   <script type="text/javascript">
   $("#c_main_").click(function(){
-	unActiveAll();
-	$(this).addClass('active'); 
+    currentType==0;
+	myFunction(0,7,0);
 });
-
 $("#c_main_txt").click(function(){
-	unActiveAll();
-	$(this).addClass('active'); 
+    currentType=0;
+	myFunction(0,7,0);
 });
-
 $("#c_main_pic").click(function(){
-	unActiveAll();
-	$(this).addClass('active'); 
+    currentType=1;
+	myFunction(currentType,7,0);
 });
-
 $("#c_main_mv").click(function(){
-	unActiveAll();
-	$(this).addClass('active'); 
+    currentType=2;
+	myFunction(currentType,7,0);
 });
-		$('#content').append('<li>新闻资讯</li>');
 
+var currentType=0;
+var currentDateGlobal;
+var preDateGlobal;
+$("#c_limit_pre").click(function(){
+	myFunction(currentType,1,preDateGlobal);
+});
+$("#c_limit_next").click(function(){
+	myFunction(currentType,7,currentDateGlobal);
+});
+$("#c_limit_1").click(function(){
+	myFunction(currentType,7,0);
+});
+	myFunction(0,7,0);
+function myFunction(inputtype,prenxt,currentDate)
+{
+    Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
+	//alert("imei");
+    var aaa=30;
+	//获取一行数据
+	var GameScore = Bmob.Object.extend("BWeiData");
+	var query = new Bmob.Query(GameScore);
+	query.equalTo("type",inputtype);
+	query.descending("createdAt");
+	if(prenxt==1){//pre
+	    if(0!=currentDate){
+    	   query.greaterThanOrEqualTo("time",currentDate);
+    	}
+	}else{//nxt
+	    if(0!=currentDate){
+//alert("ct:"+currentDate+",pre:"+preDateGlobal+",nxt"+currentDateGlobal);
+    	   query.lessThanOrEqualTo("time",currentDate);
+    	}
+	}
+	query.limit(7);
+	query.find( {
+	  success: function(object) {
+		//alert(object[0].get("record"));
+		$('#content').empty();
+		for (i=0;i<object.length;i++)
+		{
+			//alert(object[i].get("content");
+			var obj=object[i].get("content");
+			var kk=0;
+			kk=object[i].get("time");
+            var de = new Date();
+            de.setTime(kk);
+		    $('#content').append('<li>'+object[i].get("content")+'</li>');
+		}
+		currentDateGlobal =object[object.length-1].get("time");
+		preDateGlobal=object[0].get("time");
+		/*
+        var d = new Date();
+        d.setTime(preDateGlobal);
+        var d1 = new Date();
+        d1.setTime(currentDateGlobal);
+		//alert("pre:"+d+",nxt"+d1);
+		*/
+	  },
+	  error: function(object, error) {
+		alert("query object fail");
+	  }
+	});
+}
 
 function unActiveAll(){
+/**
 	$("#c_main_").removeClass('active'); 
 	$("#c_main_txt").removeClass('active'); 
 	$("#c_main_pic").removeClass('active'); 
 	$("#c_main_mv").removeClass('active'); 
-
+	*/
 }
   </script>
-</body>
+  </body>
 </html>
