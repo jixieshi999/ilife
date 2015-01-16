@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-		
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		
 <link href="http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css" rel="stylesheet">
@@ -158,7 +157,16 @@ function myFunction(inputtype,prenxt,currentDate)
 			kk=object[i].get("time");
             var de = new Date();
             de.setTime(kk);
+            if(''!=object[i].get("field")){
+		    $('#content').append('<li>'+object[i].get("content")
+		    +'');
+		    $('#content').append("<br/> <a target='_blank'  href='"+object[i].get("field")+"'>"
+		    +" <img src='"+object[i].get("field")+"' width='100px' height='100px'>"
+		    +"</a>"
+		    +'</li>');
+            }else{
 		    $('#content').append('<li>'+object[i].get("content")+'</li>');
+            }
 		}
 		currentDateGlobal =object[object.length-1].get("time");
 		preDateGlobal=object[0].get("time");
