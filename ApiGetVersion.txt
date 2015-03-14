@@ -4,6 +4,7 @@
 <versionName >1.4</versionName> 
 <versionCode >6</versionCode>
 <name>哎聊天</name>
+<updatecontent>1.优化UI,新增图片发送功能--2.解决一些bug</updatecontent>
 <url>http://jixieshi999.github.io/ilife/apk/Two-release1.3.apk</url>
 </pkg>
 <pkg >
