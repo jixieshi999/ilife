@@ -6,7 +6,7 @@
     
     <LinearLayout android:orientation="horizontal" android:background="#02b5fe"
         android:layout_width="fill_parent"  
-        android:layout_height="72" >
+        android:layout_height="100" >
 	    <com.juahya.guis.JTextView  android:layout_width="60" android:gravity="center" android:layout_gravity="center"
 	        android:layout_height="40" android:background="@url/http://z.k1982.com/png/up/200712/20071208232428235.png"
 	        juahya:attrKey="action_back" 
