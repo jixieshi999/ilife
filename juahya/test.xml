@@ -28,6 +28,12 @@
     </LinearLayout>
     
 	
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="vertical">
     <LinearLayout 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" android:orientation="horizontal">
@@ -88,5 +94,6 @@
         android:layout_height="wrap_content" 
         juahya:attrKey="work" juahya:attrDescription="请输入工作内容" 
         />
-    
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
