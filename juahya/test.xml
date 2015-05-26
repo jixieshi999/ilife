@@ -28,6 +28,12 @@
     </LinearLayout>
     
 	
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="vertical">
     <LinearLayout 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" android:orientation="horizontal">
@@ -40,7 +46,7 @@
 	    <ImageView 
 	        android:layout_width="wrap_content"  android:layout_gravity="center"
 	        android:layout_height="wrap_content"  
-	        android:background="@url/http://jixieshi999.github.io/ilife/images/BigLogo.jpg"
+	        android:src="@url/http://jixieshi999.github.io/ilife/images/BigLogo.jpg"
 	        />
     </LinearLayout>
 	<ImageView 
@@ -51,7 +57,7 @@
 	<ImageView 
         android:layout_width="fill_parent"  android:layout_gravity="center"
         android:layout_height="wrap_content"  
-        android:background="@url/http://jixieshi999.github.io/ilife/images/BigLogo.jpg"
+        android:src="@url/http://jixieshi999.github.io/ilife/images/BigLogo.jpg"
         />
     <!-- <com.juahya.guis.JTextView  android:layout_width="wrap_content" android:gravity="right" android:layout_gravity="center"
         android:layout_height="wrap_content"  
@@ -88,5 +94,6 @@
         android:layout_height="wrap_content" 
         juahya:attrKey="work" juahya:attrDescription="请输入工作内容" 
         />
-    
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
