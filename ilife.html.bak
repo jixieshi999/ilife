@@ -59,7 +59,7 @@
 					</ul>
 				</li>
 			</ul>
-			<ol  id="content" >
+			<div  id="content" >
 			
 			
 				<li>
@@ -68,7 +68,7 @@
 				<li>
 					体育竞技
 				</li>
-			</ol>
+			</div>
 			
 			<div class="pagination pagination-small">
 				<ul>
@@ -211,7 +211,7 @@ function addItem(obj){
 		    +"</a>"
 		    +'</li>');
             }else{
-		    $('#content').append('<div class="alert alert-success">'+obj.get("content")+'</div>');
+		    $('#content').append('<div class="thumbnail">'+obj.get("content")+'</div><br/>');
             }
 }
 function unActiveAll(){
