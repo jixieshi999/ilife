@@ -1,4 +1,4 @@
 #开头为注释，按行读取配置
 _config_#robotname#nancy
 _config_#robotroom#1|生活|10
-_config_#adswitch#false
+_config_#adswitch#true
