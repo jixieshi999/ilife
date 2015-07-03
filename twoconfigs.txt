@@ -2,4 +2,6 @@
 _config_#robotname#nancy
 _config_#robotroom#1|生活|10
 _config_#Imgencrypt#true
+_config_#_setting_more#哎消除
+_config_#_setting_more_record#哎消除下载地址：http://jixieshi999.github.io/ilife/apk/Amatch-release.apk
 
