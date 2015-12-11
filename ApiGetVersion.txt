@@ -1,10 +1,10 @@
 ﻿<apigetversion>
 <pkg >
 <pkgName >com.android.liu.two</pkgName>
-<versionName >1.4.1</versionName> 
-<versionCode >7</versionCode>
+<versionName >1.4.2</versionName> 
+<versionCode >8</versionCode>
 <name>哎聊天</name>
-<updatecontent>1.修复聊天室不能显示聊天内容bug</updatecontent>
+<updatecontent>1.修复不能显示聊天内容bug</updatecontent>
 <url>http://jixieshi999.github.io/ilife/apk/Two-release.apk</url>
 </pkg>
 <pkg >
