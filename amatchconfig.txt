@@ -2,6 +2,6 @@
 _config_#robotname#nancy
 _config_#adswitch#false
 _config_#lilwitch#0
-_config_#wzwadswitch#www.baidu.com
-_config_#wzwcswitch#www.baidu.com
-_config_#wzwcadsetswitch#www.baidu.com
+_config_#wzwadswitch#http://baidu.com
+_config_#wzwcswitch#http://baidu.com
+_config_#wzwcadsetswitch#http://baidu.com
