@@ -25,4 +25,13 @@
 <url>http://jixieshi999.github.io/ilife/apk/Amatch-release.apk</url>
 </pkg>
 
+<pkg >
+<pkgName >com.liu.wzw</pkgName>
+<versionName >1.0</versionName> 
+<versionCode >1</versionCode>
+<name>围住我</name>
+<updatecontent>1.优化UI--2.解决一些bug</updatecontent>
+<url>http://jixieshi999.github.io/ilife/apk/wzw-release.apk</url>
+</pkg>
+
 </apigetversion>
