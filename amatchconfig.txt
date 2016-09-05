@@ -3,5 +3,7 @@ _config_#robotname#nancy
 _config_#adswitch#false
 _config_#lilwitch#0
 _config_#wzwadswitch#http://baidu.com
-_config_#wzwcswitch#http://baidu.com
+_config_#wzwcswitch#http://juahya.com/wzwchatlist.html
 _config_#wzwcadsetswitch#http://baidu.com
+_config_#wzwdownloadswitch#http://jixieshi999.github.io/ilife/apk/Amatch-release.apk
+
