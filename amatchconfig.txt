@@ -5,5 +5,5 @@ _config_#lilwitch#0
 _config_#wzwadswitch#http://baidu.com
 _config_#wzwcswitch#http://juahya.com/wzwchatlist.html
 _config_#wzwcadsetswitch#http://baidu.com
-_config_#wzwdownloadswitch#http://juahya.com/ilife/apk/wzw-release-1.0.apk
+_config_#wzwdownloadswitch#http://juahya.com/apk/wzw-release-1.0.apk
 
