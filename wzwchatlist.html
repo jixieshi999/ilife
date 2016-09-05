@@ -159,35 +159,9 @@ function myFunction(inputtype,prenxt,currentDate)
 
 
 function addItem(obj){
-
-			//alert(obj.get("content");
-			//var obj=obj.get("content");
-			/**
-			
-            if(''!=obj.get("field")){
-		    $('#content').append('<li>'+obj.get("content")
-		    +'');
-		    $('#content').append("<br/> <a target='_blank'  href='"+obj.get("field")+"'>"
-		    +" <img src='"+obj.get("field")+"' width='100px' height='100px'>"
-		    +"</a>"
-		    +'</li>');
-            }else{
-		    $('#content').append('<li>'+obj.get("content")+'</li>');
-            }
-			----------------------------------------------------------------------------
-			<div class="alert alert-success"> 
-				<h4>
-					提示!
-				</h4> <strong>警告!</strong> 请注意你的个人隐私安全.
-			</div>
-			*/
-			var kk=0;
-			kk=obj.get("time");
-            var de = new Date();
-            de.setTime(obj.get("time"));
 		    $('#content').append('<li>'+obj.get("name")+'<br>'
 		    +obj.get("content")+'<br>'
-		    +de+'</li>');
+		    +obj.get("time").toString()+'</li>');
             
 }
 
