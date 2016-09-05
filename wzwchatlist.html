@@ -194,8 +194,6 @@ function addItem(obj){
 function addchat(str,name,imeistr,date)
 {
     Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
-alert("str " + str + ", name " + name+",imeistr "+imeistr+",date "+date);
-$("p").after("str " + str + ", name " + name+",imeistr "+imeistr+",date "+date+"<br>");
 var GameScore = Bmob.Object.extend("wzwchatlist");
     var gameScore = new GameScore();
     gameScore.set("name", name);
