@@ -2,7 +2,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+<style type="text/css">
+li {
+    position: relative;
+    margin-top: 0.2rem;
+    background-color: #fff;
+    background-size: 7.5rem 2.2rem;
+    border-bottom: 1px solid #dddddd;
+}
+</style>
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
@@ -11,13 +20,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-	<link href="http://www.bootcss.com/p/layoutit/css/bootstrap-combined.min.css" rel="stylesheet">
-	<link href="http://www.bootcss.com/p/layoutit/css/layoutit.css" rel="stylesheet">
 
 	<script src="http://xflour.com/js/bmob-min.js"></script> 
 
 	<script class="jquery library" src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="http://www.bootcss.com/p/layoutit/js/bootstrap.min.js"></script>
 	<script>
 var _hmt = _hmt || [];
 (function() {
@@ -31,50 +37,7 @@ var _hmt = _hmt || [];
 </head>
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span2">
-		</div>
-		<div class="span6">
-			<ul class="nav nav-tabs" >
-				<li class="active"  id="c_main_" >
-					<a href="#" >首页</a>
-				</li>
-				<li id="c_main_txt" >
-					<a href="#">文字</a>
-				</li>
-				<li   id="c_main_pic" >
-					<a href="#">图片</a>
-				</li>
-				<li   id="c_main_mv" >
-					<a href="#">美女</a>
-				</li>
-				<li   id="c_main_blog" >
-					<a href="#">博客</a>
-				</li>
-				<li class="dropdown pull-right">
-					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
-					<ul class="dropdown-menu">
-						<li>
-							<a href="#">操作</a>
-						</li>
-						<li>
-							<a href="#">设置栏目</a>
-						</li>
-						<li>
-							<a href="#">更多设置</a>
-						</li>
-						<li class="divider">
-						</li>
-						<li>
-							<a href="#">分割线</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-			<div  id="content" >
+			<ol  id="content" >
 			
 			
 				<li>
@@ -83,7 +46,8 @@ var _hmt = _hmt || [];
 				<li>
 					体育竞技
 				</li>
-			</div>
+			</ol>
+			
 			
 			<div class="pagination pagination-small">
 
@@ -99,17 +63,11 @@ var _hmt = _hmt || [];
 					</li>
 				</ul>
 			</div>
-			<!-- 多说评论框 start -->
-			<div class="ds-thread" data-thread-key="index" data-title="ilife" data-url="index.html"></div>
 
-		</div>
-		<div class="span4">
-		</div>
-	</div>
-</div>
+	<!--		
 <br>
 <button onclick="addchat('Bill Gates','CEO','df','dfb')">点击这里</button>
-
+-->
 
   <script type="text/javascript">
   $("#c_main_").click(function(){
@@ -226,13 +184,12 @@ function addItem(obj){
 			var kk=0;
 			kk=obj.get("time");
             var de = new Date();
-            de.setTime(kk);
-		    $('#content').append('<li>'+obj.get("content")+'</li>');
+            de.setTime(obj.get("time"));
+		    $('#content').append('<li>'+obj.get("name")+'<br>'
+		    +obj.get("content")+'<br>'
+		    +de+'</li>');
             
 }
-  </script>
-  
-<script>
 
 function addchat(str,name,imeistr,date)
 {
@@ -244,32 +201,20 @@ var GameScore = Bmob.Object.extend("wzwchatlist");
     gameScore.set("name", name);
     gameScore.set("content", str);
     gameScore.set("imei", imeistr);
+    gameScore.set("time", date);
     gameScore.save(null, {
       success: function(object) {
-        alert("create object success, object id:"+object.id);
+        //alert("create object success, object id:"+object.id);
+	    myFunction(currentType,7,0);
       },
       error: function(model, error) {
-        alert("create object fail");
+        //alert("create object fail");
       }
     });
 }
 </script>
 
 
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"xflour"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
