@@ -31,7 +31,7 @@
 <versionCode >1</versionCode>
 <name>围住我</name>
 <updatecontent>1.优化UI--2.解决一些bug</updatecontent>
-<url>http://jixieshi999.github.io/ilife/apk/wzw-release.apk</url>
+<url>http://juahya.com/ilife/apk/wzw-release-1.0.apk</url>
 </pkg>
 
 </apigetversion>
