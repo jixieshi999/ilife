@@ -2,7 +2,7 @@
 _config_#robotname#nancy
 _config_#adswitch#false
 _config_#lilwitch#0
-_config_#wzwadswitch#http://baidu.com
+_config_#wzwadswitch#http://m.pengfu.com
 _config_#wzwcswitch#http://juahya.com/wzwchatlist.html
 _config_#wzwcadsetswitch#http://baidu.com
 _config_#wzwdownloadswitch#http://juahya.com/apk/wzw-release-1.0.apk
