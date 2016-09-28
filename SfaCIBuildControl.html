@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+<style type="text/css">
+li {
+    position: relative;
+    margin-top: 0.2rem;
+    background-color: #fff;
+    background-size: 7.5rem 2.2rem;
+    border-bottom: 1px solid #dddddd;
+}
+</style>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
+  <meta charset="utf-8">
+  <title>CI版本编译控制</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+<script type="text/javascript" src="js/jedate.min.js"></script>
+
+	<script src="http://xflour.com/js/bmob-min.js"></script> 
+
+	<script class="jquery library" src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e15a0633f24d8c4441c875dd8ea0ce99";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+
+
+    <div class="container-fluid">
+    
+	<div class="row">
+	
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Test</a>
+				</li>
+				<li >
+					<a href="#">About</a>
+				</li>
+			</ul>
+			<br>
+			<div class="alert alert-dismissable alert-info" id="toastinfo">
+				 
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+					×
+				</button>
+				<h4>
+					Alert!
+				</h4> <strong>Warning!</strong> add build time success. 
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+                    <select   class="form-control" id="buildlist">
+                        <option value="NEWUI">新UI</option>
+                        <option value="LBXX">蜡笔小新</option>
+                        <option value="BFD">不凡帝</option>
+                        <option value="JDB">加多宝</option>
+                    </select>
+				</div>
+				<div class="col-md-4">
+				
+                    <!--
+                    日期和时间：
+                    <input type="datetime" name="user_date" />
+                    -->
+                    <p class="datep" ><input class="datainp" id="dateinfo" type="text" placeholder="请选择"  readonly></p>
+				</div>
+				
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-2">
+					 
+					<button type="button" class="btn btn-default"  onclick="addchat('Bill Gates','CEO','df','dfb')">
+						添加编译
+					</button>
+				</div>
+			</div>
+			<br>
+			<div class="list-group" id="content">
+				 <a href="#" class="list-group-item active">项目编译排期列表</a>
+				 
+			
+				<!--<div class="list-group-item">
+					List header
+				</div>
+				<div class="list-group-item">
+					<h4 class="list-group-item-heading">
+						List group item heading
+					</h4>
+					<p class="list-group-item-text">
+						...
+					</p>
+				</div>-->
+			</div>
+			<ul class="pagination">
+					<li id="c_limit_pre" >
+						<a href="#">上一页</a>
+					</li>
+					<li id="c_limit_1" >
+						<a >1</a>
+					</li>
+					<li id="c_limit_next" >
+						<a >下一页</a>
+					</li>
+			</ul>
+		</div>
+		
+		<div class="col-md-3">
+		</div>
+	</div>
+</div>
+
+<br>
+
+<script type="text/javascript">
+    jeDate({
+		dateCell:"#dateinfo",
+		format:"YYYY-MM-DD hh:mm:ss",
+		isinitVal:true,
+		isTime:true, //isClear:false,
+		minDate:"2016-09-19 00:00:00",
+		okfun:function(val){}
+	})
+
+    //alert("YYYY/MM".match(/\w+|d+/g).join("-"))
+</script>
+  <script type="text/javascript">
+  $('#toastinfo').hide();
+  $("#c_main_").click(function(){
+    currentType==0;
+	myFunction(0,7,0);
+});
+$("#c_main_txt").click(function(){
+    currentType=0;
+	myFunction(0,7,0);
+});
+$("#c_main_pic").click(function(){
+    currentType=1;
+	myFunction(currentType,7,0);
+});
+$("#c_main_mv").click(function(){
+    currentType=2;
+	myFunction(currentType,7,0);
+});
+$("#c_main_blog").click(function(){
+	window.open ('blog/index.html')  
+});
+var currentType=0;
+var currentDateGlobal;
+var preDateGlobal;
+$("#c_limit_pre").click(function(){
+	myFunction(currentType,1,preDateGlobal);
+});
+$("#c_limit_next").click(function(){
+	myFunction(currentType,7,currentDateGlobal);
+});
+$("#c_limit_1").click(function(){
+	myFunction(currentType,7,0);
+});
+	myFunction(0,7,0);
+function myFunction(inputtype,prenxt,currentDate)
+{
+    Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
+	//alert("imei");
+    	var aaa=30;
+	//获取一行数据
+	var GameScore = Bmob.Object.extend("CIStartTranc");
+	var query = new Bmob.Query(GameScore);
+	//query.equalTo("type",inputtype);
+	if(prenxt==1){//pre
+	   query.ascending("createdAt");
+	    if(0!=currentDate){
+    		 query.greaterThanOrEqualTo("time",currentDate);
+    		}
+	}else{//nxt
+	   query.descending("createdAt");
+	    if(0!=currentDate){
+//alert("ct:"+currentDate+",pre:"+preDateGlobal+",nxt"+currentDateGlobal);
+    	   query.lessThanOrEqualTo("time",currentDate);
+    		}
+	}
+	query.limit(7);
+	query.find( {
+	  success: function(object) {
+		//alert(object[0].get("record"));
+		//$('#content').empty();
+		$('div').remove(".list-group-item");
+	    	if(prenxt==1){//pre
+			for (i=object.length-1;i>=0;i--)
+	    		{
+	    		  addItem(object[i]);
+	    		}
+	    	}else{//nxt
+		        for (i=0;i<object.length;i++)
+	    		{
+	    		  addItem(object[i]);
+	    		}
+	    	
+		}
+		currentDateGlobal =object[object.length-1].get("time");
+		preDateGlobal=object[0].get("time");
+		/*
+        var d = new Date();
+        d.setTime(preDateGlobal);
+        var d1 = new Date();
+        d1.setTime(currentDateGlobal);
+		//alert("pre:"+d+",nxt"+d1);
+		*/
+	  },
+	  error: function(object, error) {
+		alert("query object fail");
+	  }
+	});
+}
+function addItem(obj){
+		    $('#content').append('<div class="list-group-item">'
+		    +'<h4 class="list-group-item-heading">'
+		    +obj.get("ProName")+'</h4> '
+		    +'<p class="list-group-item-text">执行时间：'
+		    +obj.get("StartTime")
+		    +'</p>'
+		    +'</div>');
+            
+}
+function addchat(str,name,imeistr,date)
+{
+
+    var buidlpro = document.getElementById("buildlist").value;
+    var buidlprotime = document.getElementById("dateinfo").value;
+
+        var d1 = new Date();
+        //alert(buidlpro+"   "+buidlprotime);
+    Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
+var GameScore = Bmob.Object.extend("CIStartTranc");
+    var gameScore = new GameScore();
+    gameScore.set("ProName", buidlpro);
+    gameScore.set("StartTime", new Date(buidlprotime ));
+    gameScore.set("Handle", 1);
+    gameScore.save(null, {
+      success: function(object) {
+        //alert("create object success, object id:"+object.id);
+        $('#toastinfo').show(1000,function(){
+            var now = new Date();
+            var exitTime = now.getTime() + 3000;
+            while (true) {
+                now = new Date();
+                if (now.getTime() > exitTime)
+                    break;
+            }
+            $("#toastinfo").hide(1000);
+        });
+        
+	    myFunction(currentType,7,0);
+      },
+      error: function(model, error) {
+        //alert(model+"sss"+error.toString());
+      }
+    });
+}
+</script>
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
