@@ -260,12 +260,12 @@ function addItem(obj){
 		    +object[0].get("CIBuildResultText")
 		    +'</p>'
 		    +'<a href="'
-		    +object[0].get("CIBuildResultUrl")
+		    +object[0].get("CIBuildResultURL")
 		    +'">下载地址</a>'
 		    +'');
 	  $('#'+object[0].get("CIStartTrancID")+'img').append(
 		    '<img src="http://qr.liantu.com/api.php?bg=f3f3f3&fg=000000&gc=222222&el=l&w=150&m=10&text='
-		    +object[0].get("CIBuildResultUrl")
+		    +object[0].get("CIBuildResultURL")
 		    +'"/>'
 		    +'');
 		//alert("query object "+object[0].get("CIBuildResultText"));
