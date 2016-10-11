@@ -18,6 +18,7 @@ li {
   <title>CI版本编译控制</title>
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta http-equiv="refresh" content="60">
 
 <script type="text/javascript" src="js/jedate.js"></script>
 
@@ -193,16 +194,18 @@ function myFunction(inputtype,prenxt,currentDate)
 	var GameScore = Bmob.Object.extend("CIStartTranc");
 	var query = new Bmob.Query(GameScore);
 	//query.equalTo("type",inputtype);
+    var d = new Date();
+    d.setTime(currentDate);
 	if(prenxt==1){//pre
 	   query.ascending("createdAt");
 	    if(0!=currentDate){
-    		 query.greaterThanOrEqualTo("time",currentDate);
+    		 query.greaterThanOrEqualTo("StartTime",d);
     		}
 	}else{//nxt
 	   query.descending("createdAt");
 	    if(0!=currentDate){
 //alert("ct:"+currentDate+",pre:"+preDateGlobal+",nxt"+currentDateGlobal);
-    	   query.lessThanOrEqualTo("time",currentDate);
+    	   query.lessThanOrEqualTo("StartTime",d);
     		}
 	}
 	query.limit(7);
@@ -223,8 +226,8 @@ function myFunction(inputtype,prenxt,currentDate)
 	    		}
 	    	
 		}
-		currentDateGlobal =object[object.length-1].get("time");
-		preDateGlobal=object[0].get("time");
+		currentDateGlobal =object[object.length-1].get("StartTime");
+		preDateGlobal=object[0].get("StartTime");
 		/*
         var d = new Date();
         d.setTime(preDateGlobal);
@@ -239,12 +242,57 @@ function myFunction(inputtype,prenxt,currentDate)
 	});
 }
 function addItem(obj){
-		    $('#content').append('<div class="list-group-item">'
-		    +'<h4 class="list-group-item-heading">'
-		    +obj.get("ProName")+'</h4> '
-		    +'<p class="list-group-item-text">执行时间：'
-		    +obj.get("StartTime")
+
+	var enddetail = Bmob.Object.extend("CIEndTranc");
+	var query = new Bmob.Query(enddetail);
+	query.equalTo("CIStartTrancID",obj.id+"");
+	
+	query.find( {
+	  success: function(object) {
+	  $('#'+object[0].get("CIStartTrancID")+'').append(
+	  '<p class="list-group-item-text">开始时间：'
+		    +object[0].get("StartTime")
 		    +'</p>'
+		    +'<p class="list-group-item-text">结束时间：'
+		    +object[0].get("EndTime")
+		    +'</p>'
+		    +'<p class="list-group-item-text">编译结果：'
+		    +object[0].get("CIBuildResultText")
+		    +'</p>'
+		    +'<a href="'
+		    +object[0].get("CIBuildResultUrl")
+		    +'">下载地址</a>'
+		    +'');
+	  $('#'+object[0].get("CIStartTrancID")+'img').append(
+		    '<img src="http://qr.liantu.com/api.php?bg=f3f3f3&fg=000000&gc=222222&el=l&w=150&m=10&text='
+		    +object[0].get("CIBuildResultUrl")
+		    +'"/>'
+		    +'');
+		//alert("query object "+object[0].get("CIBuildResultText"));
+	  },
+	  error: function(object, error) {
+		//alert("query object fail");
+	  }
+	});
+	//
+	
+		    $('#content').append(
+		    '<div class="list-group-item">'
+		    +'<div class="row">'
+		    +'<div class="col-md-4" id="'
+		    +obj.id
+		    +'img"></div>'
+		    +'<div class="col-md-8"  id="'
+    		    +obj.id
+    		    +'">'
+    		    +'<h4 class="list-group-item-heading">'
+    		    +obj.get("ProName")
+    		    +'</h4> '
+    		    +'<p class="list-group-item-text">预计时间：'
+    		    +obj.get("StartTime")
+    		    +'</p>'
+    		    +'</div>'
+    		+'</div>'
 		    +'</div>');
             
 }
