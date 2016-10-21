@@ -249,6 +249,15 @@ function addItem(obj){
 	
 	query.find( {
 	  success: function(object) {
+		  var rrre='';
+	    	if(object[0].get("CIBuildResultCode")==103){//pre
+			rrre='<p class="list-group-item-text" color="red">编译结果：'+object[0].get("CIBuildResultText")
+		    +'</p>';
+	    	}else{//nxt
+		       rrre='<p class="list-group-item-text">编译结果：'+object[0].get("CIBuildResultText")
+		    +'</p>'
+	    	
+		}
 	  $('#'+object[0].get("CIStartTrancID")+'').append(
 	  '<p class="list-group-item-text">开始时间：'
 		    +object[0].get("StartTime")
@@ -256,9 +265,7 @@ function addItem(obj){
 		    +'<p class="list-group-item-text">结束时间：'
 		    +object[0].get("EndTime")
 		    +'</p>'
-		    +'<p class="list-group-item-text">编译结果：'
-		    +object[0].get("CIBuildResultText")
-		    +'</p>'
+		    +rrre
 		    +'<a href="'
 		    +object[0].get("CIBuildResultURL")
 		    +'">下载地址</a>'
