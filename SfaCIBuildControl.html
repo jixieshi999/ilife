@@ -250,12 +250,19 @@ function addItem(obj){
 	query.find( {
 	  success: function(object) {
 		  var rrre='';
+		  var rrretxt='';
 	    	if(object[0].get("CIBuildResultCode")==103){//pre
-			rrre='<p class="list-group-item-text" color="red">编译结果：'+object[0].get("CIBuildResultText")
+			rrre='<p class="list-group-item-text" style="color:red" >编译结果：'+object[0].get("CIBuildResultText")
 		    +'</p>';
+		    rrretxt='<a href="'
+		    +object[0].get("CIBuildResultURL")
+		    +'">编译日志:txt</a>';
 	    	}else{//nxt
-		       rrre='<p class="list-group-item-text"  color="blue">编译结果：'+object[0].get("CIBuildResultText")
+		       rrre='<p class="list-group-item-text"  style="color:blue">编译结果：'+object[0].get("CIBuildResultText")
 		    +'</p>';
+		    rrretxt='<a href="'
+		    +object[0].get("CIBuildResultURL")
+		    +'">下载地址:apk</a>';
 	    	
 		}
 	  $('#'+object[0].get("CIStartTrancID")+'').append(
@@ -266,9 +273,7 @@ function addItem(obj){
 		    +object[0].get("EndTime")
 		    +'</p>'
 		    +rrre
-		    +'<a href="'
-		    +object[0].get("CIBuildResultURL")
-		    +'">下载地址</a>'
+		    +rrretxt
 		    +'');
 	  $('#'+object[0].get("CIStartTrancID")+'img').append(
 		    '<img src="http://qr.liantu.com/api.php?bg=f3f3f3&fg=000000&gc=222222&el=l&w=150&m=10&text='
