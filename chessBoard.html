@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>xx</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta charset="UTF-8">
+    </head>
+    
+<style> 
+body{ text-align:center} 
+.div{ margin:0 auto; width:400px; height:100px; border:1px solid #F00} 
+/* css注释：为了观察效果设置宽度 边框 高度等样式 */ 
+</style> 
+    <script type="text/javascript">
+        function $$(id){
+            return document.getElementById(id);
+        }
+        var tmpoutlist=new Array();
+        var cans ;
+        var cccoun;
+        var left;
+        var widthc;
+        var heightc;
+        var countInterval;
+        var tmplist;
+        var tartgol;
+        function pageLoad(){
+            var can = $$('can');
+            cans = can.getContext('2d');
+            
+            cccoun=8;
+            
+            tmpoutlist=new Array();
+            left=new Array(10,10);
+            widthc=300;
+            heightc=300;
+            
+            cans.clearRect(left[0],left[1],widthc,heightc);
+            cans.fillStyle="white";
+            cans.strokeStyle="black";
+            cans.fillRect(left[0],left[1],widthc,heightc);
+            clearInterval(countInterval);
+            
+            cans.moveTo(left[0],left[1]);
+            cans.lineTo(left[0]+widthc,left[1]);//第二个点
+            cans.lineTo(left[0]+widthc,left[1]+heightc);//第二个点
+            cans.lineTo(left[0],left[1]+heightc);//第二个点
+            cans.lineTo(left[0],left[1]);//第二个点
+            for (i=0;i<cccoun;i++)
+            {
+                
+                cans.moveTo(left[0]+widthc/cccoun*i,left[1]);
+                cans.lineTo(left[0]+widthc/cccoun*i,left[1]+heightc);//第二个点
+                
+                
+                cans.moveTo(left[0],left[1]+heightc/cccoun*i);
+                cans.lineTo(left[0]+widthc,left[1]+heightc/cccoun*i);//第二个点
+            }
+            
+            
+            cans.lineWidth=3;
+            cans.fillStyle="black";
+            cans.stroke();
+            
+            
+            tartgol=new Array(parseInt((cccoun)*Math.random()+1),parseInt((cccoun)*Math.random()+1));
+            //tartgol=new Array(1,1);
+
+            cans.fillRect(left[0]+widthc/cccoun*(tartgol[0]-1),left[1]+widthc/cccoun*(tartgol[1]-1),widthc/cccoun,widthc/cccoun);
+            cans.fillStyle="red";
+            cans.stroke();
+            
+            var tmpdepth=cccoun;
+            tmplist=new Array();
+            //left相对障碍坐标，start实际矩形起点，width宽度
+            var a={"left0":tartgol[0],"left1":tartgol[1],"width":cccoun,"start0":1,"start1":1}; 
+            tmplist.push(a);            
+            
+            var lennn=1;
+          
+            countInterval=setInterval("countNextStep()",1000);
+            //console.log(tmpoutlist[tmpoutlist.length-1]);
+            //console.log(tmplist.length);
+            //}
+            console.log('count:'+tmpoutlist.length);
+            console.log('list:'+tmpoutlist);
+            //setTimeout("loadrefresh()", 1000)
+
+        }
+        function countNextStep(){
+            
+                //if(tmplist.length<=0)break;
+                
+                if(tmplist.length<=0){
+                    clearInterval(countInterval);
+                    loadrefreshNew();
+                    return;
+                }
+                
+                var a=tmplist[0];
+                tmplist.splice(0,1);
+                
+				if(a["width"]>2){   
+                    //
+    
+                    if(a["left0"]<=a["width"]/2){
+                        if(a["left1"]<=a["width"]/2){
+                        
+                            //左上
+                            
+                            tmplist.push({"left0":a["left0"],"left1":a["left1"],"width":a["width"]/2,"start0":a["start0"],"start1":a["start1"]});
+                            
+                            tmplist.push({"left0":1,"left1":a["width"]/2,"width":a["width"]/2,"start0":a["start0"]+a["width"]/2,"start1":a["start1"]});
+                            
+                            tmplist.push({"left0":1,"left1":1,"width":a["width"]/2,"start0":a["start0"]+a["width"]/2,"start1":a["start1"]+a["width"]/2});
+                            
+                            tmplist.push({"left0":a["width"]/2,"left1":1,"width":a["width"]/2,"start0":a["start0"],"start1":a["start1"]+a["width"]/2});
+                            
+                                    tmpoutlist.push({"a0":a["start0"]+a["width"]/2,"a1":a["start1"]+a["width"]/2-1,"b0":a["start0"]+a["width"]/2,"b1":a["start1"]+a["width"]/2,"c0":a["start0"]+a["width"]/2-1,"c1":a["start1"]+a["width"]/2}); 
+             
+                            
+                        }else{
+                            //左下
+                            
+                            tmplist.push({"left0":a["width"]/2,"left1":a["width"]/2,"width":a["width"]/2,"start0":a["start0"],"start1":a["start1"]});
+                            
+                            tmplist.push({"left0":1,"left1":a["width"]/2,"width":a["width"]/2,"start0":a["start0"]+a["width"]/2,"start1":a["start1"]});
+                            
+                            tmplist.push({"left0":1,"left1":1,"width":a["width"]/2,"start0":a["start0"]+a["width"]/2,"start1":a["start1"]+a["width"]/2});
+                            
+                            tmplist.push({"left0":a["left0"],"left1":a["left1"]-a["width"]/2,"width":a["width"]/2,"start0":a["start0"],"start1":a["start1"]+a["width"]/2});
+                            
+                            tmpoutlist.push({"a0":a["start0"]+a["width"]/2-1,"a1":a["start1"]+a["width"]/2-1,"b0":a["start0"]+a["width"]/2,"b1":a["start1"]+a["width"]/2-1,"c0":a["start0"]+a["width"]/2,"c1":a["start1"]+a["width"]/2});
+              
+                        }
+                    }else{
+                    //右上
+                    
+                        if(a["left1"]<=a["width"]/2){
+                        
+                            tmplist.push({"left0":a["width"]/2,"left1":a["width"]/2,"width":a["width"]/2,"start0":a["start0"],"start1":a["start1"]});
+                            
+                            tmplist.push({"left0":a["left0"]-a["width"]/2,"left1":a["left1"],"width":a["width"]/2,"start0":a["start0"]+a["width"]/2,"start1":a["start1"]});
+                            
+                            tmplist.push({"left0":1,"left1":1,"width":a["width"]/2,"start0":a["start0"]+a["width"]/2,"start1":a["start1"]+a["width"]/2});
+                            
+                            tmplist.push({"left0":a["width"]/2,"left1":1,"width":a["width"]/2,"start0":a["start0"],"start1":a["start1"]+a["width"]/2});
+                            
+                            tmpoutlist.push({"a0":a["start0"]+a["width"]/2-1,"a1":a["start1"]+a["width"]/2-1,"b0":a["start0"]+a["width"]/2,"b1":a["start1"]+a["width"]/2,"c0":a["start0"]+a["width"]/2-1,"c1":a["start1"]+a["width"]/2});
+            
+                        }else{
+                            //右下
+                            
+                            tmplist.push({"left0":a["width"]/2,"left1":a["width"]/2,"width":a["width"]/2,"start0":a["start0"],"start1":a["start1"]});
+                            
+                            tmplist.push({"left0":1,"left1":a["width"]/2,"width":a["width"]/2,"start0":a["start0"]+a["width"]/2,"start1":a["start1"]});
+                            
+                            tmplist.push({"left0":a["left0"]-a["width"]/2,"left1":a["left1"]-a["width"]/2,"width":a["width"]/2,"start0":a["start0"]+a["width"]/2,"start1":a["start1"]+a["width"]/2});
+                            
+                            tmplist.push({"left0":a["width"]/2,"left1":1,"width":a["width"]/2,"start0":a["start0"],"start1":a["start1"]+a["width"]/2});
+                            
+                            tmpoutlist.push({"a0":a["start0"]+a["width"]/2-1,"a1":a["start1"]+a["width"]/2-1,"b0":a["start0"]+a["width"]/2,"b1":a["start1"]+a["width"]/2-1,"c0":a["start0"]+a["width"]/2-1,"c1":a["start1"]+a["width"]/2});
+             
+                        }
+                    }
+
+			}else{
+                    //==2
+                    if(1==a["left1"]){
+                       if(1==a["left0"]){
+                       //左上
+                       
+                            tmpoutlist.push({"a0":a["start0"]+1,"a1":a["start1"],"b0":a["start0"],"b1":a["start1"]+1,"c0":a["start0"]+1,"c1":a["start1"]+1}); 
+                       }else{
+                       //右上
+                       tmpoutlist.push({"a0":a["start0"],"a1":a["start1"],"b0":a["start0"],"b1":a["start1"]+1,"c0":a["start0"]+1,"c1":a["start1"]+1});   
+                       }
+                    }else{
+                       if(1==a["left0"]){
+                       //左下
+                       
+                            tmpoutlist.push({"a0":a["start0"]+1,"a1":a["start1"],"b0":a["start0"],"b1":a["start1"],"c0":a["start0"]+1,"c1":a["start1"]+1}); 
+                       }else{
+                       //右下
+                       
+                            tmpoutlist.push({"a0":a["start0"]+1,"a1":a["start1"],"b0":a["start0"],"b1":a["start1"],"c0":a["start0"],"c1":a["start1"]+1});   
+                       }
+                    }
+                    //setTimeout('loadrefreshNew()', 1000*iiii);
+                    
+            }
+            loadrefreshNew();
+        }
+        
+            var iiii=1;
+            function loadrefreshNew(){
+                    if(tmpoutlist.length<=0){
+                        return;
+                    }
+                    iiii=0;
+                    console.log('second time'+tmpoutlist[iiii]["a0"]);
+                    cans.beginPath();
+                    //cans.fillStyle="blue";
+                    cans.strokeStyle="blue";
+            
+            
+                
+                    if(tmpoutlist[iiii]["a0"]!=tmpoutlist[iiii]["b0"]&&tmpoutlist[iiii]["a1"]!=tmpoutlist[iiii]["b1"]){
+                    
+                    cans.moveTo(left[0]+widthc/cccoun*(tmpoutlist[iiii]["a0"]-1)+widthc/(2*cccoun)-1,left[1]+widthc/cccoun*(tmpoutlist[iiii]["a1"]-1)+widthc/(2*cccoun)-1);
+                        cans.lineTo(left[0]+widthc/cccoun*(tmpoutlist[iiii]["c0"]-1)+widthc/(2*cccoun)-1,left[1]+widthc/cccoun*(tmpoutlist[iiii]["c1"]-1)+widthc/(2*cccoun)-1);//第二个点
+                        cans.lineTo(left[0]+widthc/cccoun*(tmpoutlist[iiii]["b0"]-1)+widthc/(2*cccoun)-1,left[1]+widthc/cccoun*(tmpoutlist[iiii]["b1"]-1)+widthc/(2*cccoun)-1);//第二个点
+                    }else{
+                        if(tmpoutlist[iiii]["c0"]!=tmpoutlist[iiii]["b0"]&&tmpoutlist[iiii]["c1"]!=tmpoutlist[iiii]["b1"]){
+                        cans.moveTo(left[0]+widthc/cccoun*(tmpoutlist[iiii]["c0"]-1)+widthc/(2*cccoun)-1,left[1]+widthc/cccoun*(tmpoutlist[iiii]["c1"]-1)+widthc/(2*cccoun)-1);//第二个点
+                    cans.lineTo(left[0]+widthc/cccoun*(tmpoutlist[iiii]["a0"]-1)+widthc/(2*cccoun)-1,left[1]+widthc/cccoun*(tmpoutlist[iiii]["a1"]-1)+widthc/(2*cccoun)-1);
+                        cans.lineTo(left[0]+widthc/cccoun*(tmpoutlist[iiii]["b0"]-1)+widthc/(2*cccoun)-1,left[1]+widthc/cccoun*(tmpoutlist[iiii]["b1"]-1)+widthc/(2*cccoun)-1);//第二个点
+                        }else{
+                            
+                    cans.moveTo(left[0]+widthc/cccoun*(tmpoutlist[iiii]["a0"]-1)+widthc/(2*cccoun)-1,left[1]+widthc/cccoun*(tmpoutlist[iiii]["a1"]-1)+widthc/(2*cccoun)-1);
+                        cans.lineTo(left[0]+widthc/cccoun*(tmpoutlist[iiii]["b0"]-1)+widthc/(2*cccoun)-1,left[1]+widthc/cccoun*(tmpoutlist[iiii]["b1"]-1)+widthc/(2*cccoun)-1);//第二个点
+                        cans.lineTo(left[0]+widthc/cccoun*(tmpoutlist[iiii]["c0"]-1)+widthc/(2*cccoun)-1,left[1]+widthc/cccoun*(tmpoutlist[iiii]["c1"]-1)+widthc/(2*cccoun)-1);//第二个点
+                        }
+                    
+                    }
+                    //cans.closePath();
+                    
+                    cans.lineWidth=3;
+                    cans.stroke();
+                    
+                    iiii++;
+                    tmpoutlist.splice(0,1);
+                    //setTimeout('loadrefresh()', 1000);
+            }
+            var ii=0;
+            function loadrefresh(){
+                   
+                    if(ii>=tmpoutlist.length)return;
+                    console.log('second time'+tmpoutlist[ii]["a0"]);
+                    
+                    cans.fillRect(left[0]+widthc/cccoun*(tmpoutlist[ii]["a0"]-1)+2,left[1]+widthc/cccoun*(tmpoutlist[ii]["a1"]-1)+2,widthc/cccoun-4,widthc/cccoun-4);
+                    cans.fillRect(left[0]+widthc/cccoun*(tmpoutlist[ii]["b0"]-1)+2,left[1]+widthc/cccoun*(tmpoutlist[ii]["b1"]-1)+2,widthc/cccoun-4,widthc/cccoun-4);
+                    cans.fillRect(left[0]+widthc/cccoun*(tmpoutlist[ii]["c0"]-1)+2,left[1]+widthc/cccoun*(tmpoutlist[ii]["c1"]-1)+2,widthc/cccoun-4,widthc/cccoun-4);
+                    ii++;
+                    setTimeout('loadrefresh()', 1000);
+            }
+    </script>
+    <body onload="pageLoad();">
+        <canvas id="can" width="400px" height="400px">4</canvas>
+        <div     onclick='pageLoad();' >
+        <p>重新开始</>
+        </>
+    </body>
+</html>
