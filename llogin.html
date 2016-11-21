@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+<style type="text/css">
+li {
+    position: relative;
+    margin-top: 0.2rem;
+    background-color: #fff;
+    background-size: 7.5rem 2.2rem;
+    border-bottom: 1px solid #dddddd;
+}
+</style>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
+  <meta charset="utf-8">
+  <title>CI版本编译控制</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+<script type="text/javascript" src="js/jedate.js"></script>
+
+	<script src="http://xflour.com/js/bmob-min.js"></script> 
+
+	<script class="jquery library" src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+	
+	<script class="jquery library" src="js/jquery.cookie.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script>
+</script>
+
+</head>
+<body>
+
+
+    <div class="container-fluid">
+    
+	<div class="row">
+	
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+		  
+			<div class="login-con f-l">
+
+				<div class="form-group">
+
+					<input type="text" placeholder="邮箱/手机号码" id="ipta" />
+
+					<span class="error-notic">邮箱/手机号码不正确</span>
+
+				</div>
+
+				<div class="form-group">
+
+					<input type="password" placeholder="密码" id="iptp">
+
+					<span class="error-notic">密码不正确</span>
+
+				</div>
+
+				<div class="form-group">
+
+					<button type="submit" class="tran pr" id="btnlogin">
+
+						<a href="javascript:;" class="tran">登录</a>
+ 
+
+					</button>
+
+				</div>
+
+				<div class="from-line"></div>
+
+				<div class="form-group">
+
+					<a href="javascript:;" class="move-signup a-tag tran blue-border">还没有帐号？免费注册<i class="iconfont tran">&#xe606;</i></a>
+
+				</div>
+
+				<div class="form-group">
+
+					<a href="javascript:;" class="move-reset a-tag tran">忘记密码？重置 <i class="iconfont tran">&#xe606;</i></a>
+
+				</div>
+
+				<div class="form-group">
+
+					<a href="javascript:;" class="move-other a-tag tran">使用第三方帐号登录<i class="iconfont tran">&#xe606;</i></a>
+
+				</div>
+
+			</div>
+
+
+		</div>
+		
+		<div class="col-md-3">
+		</div>
+	</div>
+</div>
+
+<br>
+
+<script type="text/javascript">
+    if(typeof($.cookie("token")) == "undefined"){
+            //window.location.href="lmain.html";
+    }
+	$("#btnlogin").click(function() {
+            myFunction($("#ipta").val(),$("#iptp").val(),NewGuid());
+	    
+	});
+function myFunction(name,pass,guid)
+{
+            //console.log("name:"+name+" pa:"+pass+" g:"+guid);
+      Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
+	  Bmob.Cloud.run('llogin', {"name":name,"pass":pass,"guid":guid}, {
+      success: function(result) {
+        var sss=JSON.parse(result);
+            //console.log(sss);
+        if(sss.code==100){
+            var cookietime = new Date(); 
+            cookietime.setTime(cookietime.getTime() + (10 * 60 * 1000));//coockie保存一分钟
+            $.cookie('token', '', { expires: -1 }); 
+            $.cookie("token", sss.LoginToken,{expires:cookietime}); 
+            //alert(sss.LoginToken+"-"+sss.txt);
+            window.location.href="lmain.html";
+        }else{
+            alert(sss.txt);
+        }
+        
+      },
+      error: function(error) {
+      }
+      });
+}
+function S4() 
+{   
+   return (((1+Math.random())*0x10000)|0).toString(16).substring(1);   
+}    
+function NewGuid() 
+{   
+   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());   
+}
+</script>
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
