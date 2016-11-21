@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+<style type="text/css">
+li {
+    position: relative;
+    margin-top: 0.2rem;
+    background-color: #fff;
+    background-size: 7.5rem 2.2rem;
+    border-bottom: 1px solid #dddddd;
+}
+</style>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
+  <meta charset="utf-8">
+  <title>lmain</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+<script type="text/javascript" src="js/jedate.js"></script>
+
+	<script src="http://xflour.com/js/bmob-min.js"></script> 
+
+	<script class="jquery library" src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script class="jquery library" src="js/jquery.cookie.js" type="text/javascript"></script>
+	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script>
+</script>
+
+</head>
+<body>
+
+
+    <div class="container-fluid">
+    
+	<div class="row">
+	
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-6">
+		
+		</div>
+		
+		<div class="col-md-3">
+		</div>
+	</div>
+</div>
+
+<br>
+
+<script type="text/javascript">
+
+            //console.log($.cookie("token"));
+    if(typeof($.cookie("token")) == "undefined"){
+       // window.location.href="llogin.html";
+    }else{
+        myFunction($.cookie("token"));
+    }
+	
+function myFunction(token)
+{
+
+      Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
+	  Bmob.Cloud.run('lgetmain', {"logintoken":token}, {
+      success: function(result) {
+        var sss=JSON.parse(result);
+            console.log(sss);
+        if(100==sss.code){
+            alert(sss.txt);
+        }else{
+            alert(sss.txt);
+            //window.location.href="llogin.html";
+        }
+        
+      },
+      error: function(error) {
+      }
+      });
+}
+</script>
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
