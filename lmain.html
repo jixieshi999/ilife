@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,16 +16,16 @@ li {
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui">
   <meta charset="utf-8">
-  <title>lmain</title>
+  <title>CI版本编译控制</title>
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta http-equiv="refresh" content="60">
 
 <script type="text/javascript" src="js/jedate.js"></script>
 
 	<script src="http://xflour.com/js/bmob-min.js"></script> 
 
 	<script class="jquery library" src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script class="jquery library" src="js/jquery.cookie.js" type="text/javascript"></script>
 	
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -34,6 +35,13 @@ li {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e15a0633f24d8c4441c875dd8ea0ce99";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 </script>
 
 </head>
@@ -47,7 +55,82 @@ li {
 		<div class="col-md-3">
 		</div>
 		<div class="col-md-6">
-		
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Test</a>
+				</li>
+				<li >
+					<a href="#">About</a>
+				</li>
+			</ul>
+			<br>
+			<div class="alert alert-dismissable alert-info" id="toastinfo">
+				 
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+					×
+				</button>
+				<h4>
+					Alert!
+				</h4> <strong>Warning!</strong> add build time success. 
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+                    <select   class="form-control" id="buildlist">
+                        <option value="NEWUI">新UI</option>
+                        <option value="LBXX">蜡笔小新</option>
+                        <option value="BFD">不凡帝</option>
+                        <option value="JDB">加多宝</option>
+                    </select>
+				</div>
+				<div class="col-md-4">
+				
+                    <!--
+                    日期和时间：
+                    <input type="datetime" name="user_date" />
+                    -->
+                    <p class="datep" ><input class="datainp" id="dateinfo" type="text" placeholder="请选择"  readonly></p>
+				</div>
+				
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-2">
+					 
+					<button type="button" class="btn btn-default"  onclick="addchat('Bill Gates','CEO','df','dfb')">
+						添加编译
+					</button>
+				</div>
+			</div>
+			<br>
+			<div class="list-group" id="content">
+				 <a href="#" class="list-group-item active">项目编译排期列表</a>
+				 
+			
+				<!--<div class="list-group-item">
+					List header
+				</div>
+				<div class="list-group-item">
+					<h4 class="list-group-item-heading">
+						List group item heading
+					</h4>
+					<p class="list-group-item-text">
+						...
+					</p>
+				</div>-->
+			</div>
+			<ul class="pagination">
+					<li id="c_limit_pre" >
+						<a href="#">上一页</a>
+					</li>
+					<li id="c_limit_1" >
+						<a >1</a>
+					</li>
+					<li id="c_limit_next" >
+						<a >下一页</a>
+					</li>
+			</ul>
 		</div>
 		
 		<div class="col-md-3">
@@ -58,36 +141,165 @@ li {
 <br>
 
 <script type="text/javascript">
+    jeDate({
+		dateCell:"#dateinfo",
+		format:"YYYY-MM-DD hh:mm:ss",
+		isinitVal:true,
+		isTime:true, //isClear:false,
+		minDate:"2016-09-19 00:00:00",
+		okfun:function(val){}
+	})
 
-            //console.log($.cookie("token"));
-    if(typeof($.cookie("token")) == "undefined"){
-        window.location.href="llogin.html";
-    }else{
-        myFunction($.cookie("token"));
-    }
-	
-function myFunction(token)
+    //alert("YYYY/MM".match(/\w+|d+/g).join("-"))
+</script>
+  <script type="text/javascript">
+  $('#toastinfo').hide();
+  $("#c_main_").click(function(){
+    currentType==0;
+	myFunction(0,7,0);
+});
+$("#c_main_txt").click(function(){
+    currentType=0;
+	myFunction(0,7,0);
+});
+$("#c_main_pic").click(function(){
+    currentType=1;
+	myFunction(currentType,7,0);
+});
+$("#c_main_mv").click(function(){
+    currentType=2;
+	myFunction(currentType,7,0);
+});
+$("#c_main_blog").click(function(){
+	window.open ('blog/index.html')  
+});
+var currentType=0;
+var currentDateGlobal=0;
+$("#c_limit_pre").click(function(){
+    currentDateGlobal--;
+    if(currentDateGlobal<=0)currentDateGlobal=0;
+    myFunction($.cookie("token"),currentDateGlobal);
+});
+$("#c_limit_next").click(function(){
+    myFunction($.cookie("token"),currentDateGlobal++);
+});
+$("#c_limit_1").click(function(){
+    myFunction($.cookie("token"),0);
+});
+
+function myFunction(token,skpc)
 {
 
       Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
-	  Bmob.Cloud.run('lgetmain', {"logintoken":token}, {
+	  Bmob.Cloud.run('lroute', {"logintoken":token,"name":"CIList","param1":skpc}, {
       success: function(result) {
         var sss=JSON.parse(result);
             console.log(sss);
         if(100==sss.code){
-            alert(sss.txt);
+            
+		    $('div').remove(".list-group-item");
+    	    if(prenxt==1){ 
+    			for (i=sss.msg.results.length-1;i>=0;i--)
+    	    	{
+    	    		  addItem(sss.msg.results[i]);
+    	    	}
+    	    }else{ 
+    		        for (i=0;i<sss.msg.results.length;i++)
+    	    		{
+    	    		  addItem(sss.msg.results[i]);
+    	    		}
+    	    	
+    		}
         }else{
             alert(sss.txt);
             window.location.href="llogin.html";
         }
-        
       },
       error: function(error) {
       }
       });
 }
+
+function addItem(obj){
+
+	Bmob.Cloud.run('lroute', {"logintoken":token,"name":"CIDetail","param1":obj.objectId}, {
+    success: function(result) {
+        var sss=JSON.parse(result).msg.results;
+            //console.log(sss);
+        if(200==sss.code){
+            
+            var rrre='';
+            var rrretxt='';
+            if(object[0].CIBuildResultCode==103){//pre
+                rrre='<p class="list-group-item-text" style="color:red" >编译结果：'+object[0].CIBuildResultText
+                +'</p>';
+                rrretxt='<a href="'
+                +object[0].CIBuildResultURL
+                +'">编译日志:txt</a>';
+            }else{//nxt
+                rrre='<p class="list-group-item-text"  style="color:blue">编译结果：'+object[0].CIBuildResultText
+                +'</p>';
+                rrretxt='<a href="'
+                +object[0].CIBuildResultURL
+                +'">下载地址:apk</a>';
+            
+            }
+            $('#'+object[0].CIStartTrancID+'').append(
+            '<p class="list-group-item-text">开始时间：'
+            +object[0].StartTime.iso
+            +'</p>'
+            +'<p class="list-group-item-text">结束时间：'
+            +object[0].EndTime.iso
+            +'</p>'
+            +rrre
+            +rrretxt
+            +'');
+            $('#'+object[0].CIStartTrancID+'img').append(
+            '<img src="http://qr.liantu.com/api.php?bg=f3f3f3&fg=000000&gc=222222&el=l&w=150&m=10&text='
+            +object[0].CIBuildResultURL
+            +'"/>'
+            +'');
+        }else{
+            alert(sss.txt);
+            window.location.href="llogin.html";
+        }
+        },
+        error: function(error) {
+        }
+    });
+      
+	
+    $('#content').append(
+    '<div class="list-group-item">'
+    +'<div class="row">'
+    +'<div class="col-md-4" id="'
+    +obj.objectId
+    +'img"></div>'
+    +'<div class="col-md-8"  id="'
+        +obj.objectId
+        +'">'
+        +'<h4 class="list-group-item-heading">'
+        +obj.ProName
+        +'</h4> '
+        +'<p class="list-group-item-text">预计时间：'
+        +obj.StartTime
+        +'</p>'
+        +'</div>'
+    +'</div>'
+    +'</div>');
+            
+}
 </script>
 
+<script type="text/javascript">
+
+            //console.log($.cookie("token"));
+    if(typeof($.cookie("token")) == "undefined"){
+        window.location.href="llogin.html";
+    }else{
+        myFunction($.cookie("token"),0);
+    }
+</script>
 
 
 <!-- End Document
