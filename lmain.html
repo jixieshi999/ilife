@@ -198,9 +198,9 @@ function myFunction(token,skpc)
         console.log(sss);
             
 	$('div').remove(".list-group-item");
-	for (i=0;i<sss.msg.results.length;i++)
+	for (i=0;i<sss.results.length;i++)
 	{
-	  addItem(sss.msg.results[i]);
+	  addItem(sss.results[i]);
 	}
     	    	
 	
@@ -214,7 +214,7 @@ function addItem(obj){
 
     Bmob.Cloud.run('lroute', {"logintoken":token,"name":"CIDetail","param1":obj.objectId}, {
     success: function(result) {
-        var sss=JSON.parse(result).msg.results;
+        var sss=JSON.parse(result).results;
             //console.log(sss);
             
             var rrre='';
