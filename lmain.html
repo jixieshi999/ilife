@@ -196,25 +196,20 @@ function myFunction(token,skpc)
       success: function(result) {
         var sss=JSON.parse(result);
         console.log(sss);
-        if(200==sss.code){
             
-		    $('div').remove(".list-group-item");
-    	    if(prenxt==1){ 
+	$('div').remove(".list-group-item");
+    	if(prenxt==1){ 
     			for (i=sss.msg.results.length-1;i>=0;i--)
     	    	{
     	    		  addItem(sss.msg.results[i]);
     	    	}
-    	    }else{ 
+    	}else{ 
     		        for (i=0;i<sss.msg.results.length;i++)
     	    		{
     	    		  addItem(sss.msg.results[i]);
     	    		}
     	    	
-    		}
-        }else{
-            alert(sss.txt);
-            window.location.href="llogin.html";
-        }
+	}
       },
       error: function(error) {
       }
