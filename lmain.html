@@ -195,8 +195,8 @@ function myFunction(token,skpc)
 	  Bmob.Cloud.run('lroute', {"logintoken":token,"name":"CIList","param1":skpc}, {
       success: function(result) {
         var sss=JSON.parse(result);
-            console.log(sss);
-        if(100==sss.code){
+        console.log(sss);
+        if(200==sss.code){
             
 		    $('div').remove(".list-group-item");
     	    if(prenxt==1){ 
@@ -227,7 +227,7 @@ function addItem(obj){
     success: function(result) {
         var sss=JSON.parse(result).msg.results;
             //console.log(sss);
-        if(200==sss.code){
+        if(sss.length>0){
             
             var rrre='';
             var rrretxt='';
