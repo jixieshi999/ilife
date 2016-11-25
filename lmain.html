@@ -222,7 +222,6 @@ function addItem(obj){
     success: function(result) {
         var sss=JSON.parse(result).msg.results;
             //console.log(sss);
-        if(sss.length>0){
             
             var rrre='';
             var rrretxt='';
@@ -255,10 +254,6 @@ function addItem(obj){
             +object[0].CIBuildResultURL
             +'"/>'
             +'');
-        }else{
-            alert(sss.txt);
-            window.location.href="llogin.html";
-        }
         },
         error: function(error) {
         }
