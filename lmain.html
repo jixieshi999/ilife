@@ -230,7 +230,10 @@ function addItem(obj){
                 +'</p>';
                 rrretxt='<a href="'
                 +object[0].CIBuildResultURL
-                +'">下载地址:apk</a>';
+                +'">下载地址:apk</a>'
+		+ '<p><a href="'
+                +object[0].CIBuildResultExtra
+                +'">修改日志</a></p>';;
             
             }
             $('#'+object[0].CIStartTrancID+'').append(
