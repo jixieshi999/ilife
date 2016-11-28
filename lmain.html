@@ -188,6 +188,11 @@ $("#c_limit_1").click(function(){
     myFunction($.cookie("token"),0);
 });
 
+            $('ul.nav nav-tabs').append(
+            '<li> profile : '
+            +$.cookie("proname")
+            +'</li>'
+            +'');
 function myFunction(token,skpc)
 {
 
