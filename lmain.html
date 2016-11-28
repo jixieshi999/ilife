@@ -277,6 +277,36 @@ function addItem(obj){
     +'</div>');
             
 }
+	  
+function addchat(str,name,imeistr,date)
+{
+
+    var buidlpro = document.getElementById("buildlist").value;
+    var buidlprotime = document.getElementById("dateinfo").value;
+
+    Bmob.Cloud.run('lroute', {"logintoken":$.cookie("token"),"name":"CIBuild","param1":buidlpro,"param2":buidlprotime}, {
+    success: function(result) {
+        var object=JSON.parse(result).results;
+        //alert("create object success, object id:"+object.id);
+        $('#toastinfo').show(1000,function(){
+            var now = new Date();
+            var exitTime = now.getTime() + 3000;
+            while (true) {
+                now = new Date();
+                if (now.getTime() > exitTime)
+                    break;
+            }
+            $("#toastinfo").hide(1000);
+        });
+        
+	    myFunction(currentType,7,0);
+      },
+      error: function(model, error) {
+        //alert(model+"sss"+error.toString());
+      }
+    });
+}
+
 </script>
 
 <script type="text/javascript">
