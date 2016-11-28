@@ -130,6 +130,8 @@ function myFunction(name,pass,guid)
             cookietime.setTime(cookietime.getTime() + (10 * 60 * 1000));//coockie保存一分钟
             $.cookie('token', '', { expires: -1 }); 
             $.cookie("token", sss.LoginToken,{expires:cookietime}); 
+            $.cookie('proname', '', { expires: -1 }); 
+            $.cookie("proname", sss.nick,{expires:cookietime}); 
             //alert(sss.LoginToken+"-"+sss.txt);
             window.location.href="lmain.html";
         }else{
