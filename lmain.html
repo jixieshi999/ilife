@@ -299,10 +299,7 @@ function addchat(str,name,imeistr,date)
             $("#toastinfo").hide(1000);
         });
         
-	    myFunction(currentType,7,0);
-      },
-      error: function(model, error) {
-        //alert(model+"sss"+error.toString());
+    	myFunction($.cookie("token"),0);
       }
     });
 }
