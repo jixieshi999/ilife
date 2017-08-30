@@ -36,25 +36,26 @@ var _hmt = _hmt || [];
 
 </head>
 <body>
-	<!--		
+		
 <br>
 <button onclick="addchat('Bill Gates','CEO','df','dfb')">点击这里</button>
---> 
+
 
   <script type="text/javascript">
 function addchat(str,name,imeistr,date)
 {
+    var datedate = new Date();
     Bmob.initialize("69f77c763c1dfdfb45ffa1b925ed7ca9", "aade001c77e009552a24b35d51b08434");
 var GameScore = Bmob.Object.extend("xfloursdk");
     var gameScore = new GameScore();
-    gameScore.set("a", name);
+    gameScore.set("a", name+datedate.getSeconds());
     gameScore.set("b", str);
     gameScore.set("c", imeistr);
     gameScore.set("d", date);
     gameScore.save(null, {
       success: function(object) {
         //alert("create object success, object id:"+object.id);
-	    myFunction(currentType,7,0);
+	    //myFunction(currentType,7,0);
       },
       error: function(model, error) {
         //alert("create object fail");
