@@ -57,9 +57,11 @@ var GameScore = Bmob.Object.extend("xfloursdk");
       success: function(object) {
         //alert("create object success, object id:"+object.id);
 	    //myFunction(currentType,7,0);
+	window.location.href = "http://juahya.com/xfloursdk.html/done";
       },
       error: function(model, error) {
         //alert("create object fail");
+	window.location.href = "http://juahya.com/xfloursdk.html/error";
       }
     });
 }
