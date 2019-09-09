@@ -1,9 +1,14 @@
-﻿#sta_in 开始打卡 in
 
+#sta_in 上班打卡 可用
 _gh#sta_in|2019-09-06
+
+#sta_out 上班打卡 不可用
 _gh#sta_out|2019-09-07
 _gh#sta_out|2019-09-08
 
+#end_in 下班打卡 可用
 _gh#end_in|2019-08-20
+
+#end_out 下班打卡 不可用
 _gh#end_out|2019-09-07
 _gh#end_out|2019-09-08
